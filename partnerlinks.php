@@ -1,63 +1,118 @@
 <?php
-	define('TITLE', 'Partnerlinks');
-	include('includes/header.php');
+    define('TITLE', 'Partnerlinks');
+    include('includes/header.php');
+
+    $partnerLinks = [
+        ['url' => 'https://18date.net/', 'label' => '18Date.net'],
+        ['url' => 'https://sex55.net/', 'label' => 'sex55.net'],
+        ['url' => 'https://oproepjesnederland.nl/', 'label' => 'Oproepjes Nederland'],
+        ['url' => 'https://flirthonk.nl', 'label' => 'Flirthonk.nl gratis dating'],
+        ['url' => 'http://www.adulttop50.nl', 'label' => 'Adult Top 50'],
+        ['url' => 'http://www.topadultsites.nl', 'label' => 'Top Adultsites.nl'],
+        ['url' => 'http://gratissex.boogolinks.nl', 'label' => 'gratissex'],
+        ['url' => 'http://dating.boogolinks.nl', 'label' => 'dating links'],
+        ['url' => 'http://casualdating.bestelinks.nl', 'label' => 'beste casualdating'],
+        ['url' => 'http://dating.bestelinks.nl', 'label' => 'dating'],
+        ['url' => 'http://dating-websites.links.nl', 'label' => 'dating-websites'],
+        ['url' => 'http://dating.links.nl', 'label' => 'dating'],
+        ['url' => 'http://sexdate.links.nl', 'label' => 'sexdate links'],
+        ['url' => 'http://dating.jouwbegin.nl', 'label' => 'dating'],
+        ['url' => 'http://date.jouwbegin.nl', 'label' => 'date begin'],
+        ['url' => 'http://gratis-datingsites.jouwpagina.nl', 'label' => 'gratis-datingsites'],
+        ['url' => 'http://date.jouwpagina.nl', 'label' => 'date pagina'],
+        ['url' => 'http://datingsites.jouwpagina.be', 'label' => 'datingsites'],
+        ['url' => 'http://dating.jouwpagina.be', 'label' => 'dating pagina be'],
+        ['url' => 'http://dating.uwpagina.nl', 'label' => 'dating'],
+        ['url' => 'http://date.uwpagina.nl', 'label' => 'date pagina'],
+        ['url' => 'http://dating.beginthier.nl', 'label' => 'dating'],
+        ['url' => 'http://daten.beginthier.nl', 'label' => 'daten begint hier'],
+        ['url' => 'http://dating.expertpagina.nl', 'label' => 'expert dating'],
+        ['url' => 'http://date.expertpagina.nl', 'label' => 'date'],
+        ['url' => 'http://sexdate.expertpagina.nl', 'label' => 'sexdate pagina'],
+        ['url' => 'http://dating.startbewijs.nl', 'label' => 'start dating'],
+        ['url' => 'http://sexdate.startbewijs.nl', 'label' => 'sexdate bewijs'],
+        ['url' => 'http://dating.startplezier.nl', 'label' => 'start dating'],
+        ['url' => 'http://date.startplezier.nl', 'label' => 'date'],
+        ['url' => 'http://sexdate.startplezier.nl', 'label' => 'sexdate plezier'],
+        ['url' => 'http://dating.b9.nl', 'label' => 'dating'],
+        ['url' => 'http://date.b9.nl', 'label' => 'date'],
+        ['url' => 'http://sexdate.b9.nl', 'label' => 'sexdate b9'],
+        ['url' => 'http://dating.startpagina.net', 'label' => 'start dating'],
+        ['url' => 'http://date.startpagina.net', 'label' => 'date'],
+        ['url' => 'http://sexdate.startpagina.net', 'label' => 'sexdate pagina'],
+        ['url' => 'http://dating.eigenstart.nl', 'label' => 'eigen dating'],
+        ['url' => 'http://date.eigenstart.nl', 'label' => 'date start'],
+        ['url' => 'http://dating.linkspot.nl', 'label' => 'dating link'],
+        ['url' => 'http://date.linkspot.nl', 'label' => 'date spot'],
+        ['url' => 'http://sexdate.linkspot.nl', 'label' => 'sexdate spot'],
+        ['url' => 'http://dating.allepaginas.nl', 'label' => 'alle dating'],
+        ['url' => 'http://date.allepaginas.nl', 'label' => 'date'],
+        ['url' => 'http://sexdate.allepaginas.nl', 'label' => 'sexdate paginas'],
+        ['url' => 'http://dating.linkexplorer.nl', 'label' => 'dating'],
+        ['url' => 'http://date.linkexplorer.nl', 'label' => 'date explorer'],
+        ['url' => 'http://sexdate.linkexplorer.nl', 'label' => 'sexdate explorer'],
+        ['url' => 'https://partnerzoeken.startpagina.nl/', 'label' => 'partnerzoeken'],
+        ['url' => 'https://dating.opzijnbest.nl/', 'label' => 'dating opzijnbest'],
+        ['url' => 'https://dating.sitelinkje.nl', 'label' => 'dating sitelinkje'],
+        ['url' => 'http://dating.start.be', 'label' => 'dating start'],
+        ['url' => 'http://date.start.be', 'label' => 'date'],
+        ['url' => 'http://sexdate.start.be', 'label' => 'sexdate belgië'],
+        ['url' => 'http://datingsites.favos.nl', 'label' => 'dating'],
+        ['url' => 'http://date.favos.nl', 'label' => 'date favos'],
+        ['url' => 'http://sexdate.favos.nl', 'label' => 'sexdate favos'],
+        ['url' => 'http://dating.vindjeviahier.nl', 'label' => 'dating'],
+        ['url' => 'http://date.vindjeviahier.nl', 'label' => 'date vind je via hier'],
+        ['url' => 'http://dating.eigenstart.be', 'label' => 'eigen dating'],
+        ['url' => 'http://date.eigenstart.be', 'label' => 'date start'],
+        ['url' => 'http://date.web-directory.be', 'label' => 'date directory'],
+        ['url' => 'http://datingtips.web-directory.be', 'label' => 'datingtips web'],
+        ['url' => 'http://dating.tipjes.nl', 'label' => 'dating'],
+        ['url' => 'http://date.tipjes.nl', 'label' => 'date'],
+        ['url' => 'http://sexdate.tipjes.nl', 'label' => 'sexdate tipjes'],
+        ['url' => 'http://dating.eigenoverzicht.nl', 'label' => 'eigen dating'],
+        ['url' => 'http://date.eigenoverzicht.nl', 'label' => 'date overzicht'],
+        ['url' => 'http://dating.webgidsje.nl', 'label' => 'dating'],
+        ['url' => 'http://date.webgidsje.nl', 'label' => 'date'],
+        ['url' => 'http://sexdate.webgidsje.nl', 'label' => 'sexdate webgidsje'],
+        ['url' => 'http://dating.linkjespagina.nl', 'label' => 'pagina dating'],
+        ['url' => 'http://date.linkjespagina.nl', 'label' => 'date'],
+        ['url' => 'http://sexdate.linkjespagina.nl', 'label' => 'sexdate linkjes'],
+        ['url' => 'http://dating.linkgoed.nl', 'label' => 'link dating'],
+        ['url' => 'http://date.linkgoed.nl', 'label' => 'date'],
+        ['url' => 'http://sexdate.linkgoed.nl', 'label' => 'sexdate goed'],
+        ['url' => 'http://dating.m4n.nl/', 'label' => ' dating'],
+        ['url' => 'http://date.m4n.nl/', 'label' => 'date m4n'],
+        ['url' => 'http://dating.zoekvinden.nl', 'label' => 'zoek dating'],
+        ['url' => 'http://date.zoekvinden.nl', 'label' => 'date'],
+        ['url' => 'http://sexdate.zoekvinden.nl', 'label' => 'sexdate vinden'],
+        ['url' => 'http://www.linkorado.com/', 'label' => 'Linkorado'],
+    ];
 ?>
 <div class="container">
-	<div class="jumbotron my-4">
-		<h1 class="text-center">Partnerlinks:</h1>
-		<div class="row">
-			<div class="col-md-6 col-12">
-				<ul>
-					<li><a href="https://18date.net/" target="_blank" class="m-0">18Date.net</a></li>
-			  		<li><a href="https://sex55.net/" target="_blank" class="m-0">sex55.net</a></li>
-			  		<li><a href="https://oproepjesnederland.nl/" target="_blank" class="m-0">Oproepjes Nederland</a></li>
-			  		<li><a href="https://flirthonk.nl" target="_blank" class="m-0" title="gratis dating">Flirthonk.nl gratis dating</a></li>
-			  		<li><a href="http://www.adulttop50.nl" target="_blank" class="m-0">Adult Top 50</a></li>
-					<li><a href="http://www.topadultsites.nl" target="_blank" class="m-0">Top Adultsites.nl</a></li>
-			  		<li><a href="http://gratissex.boogolinks.nl" target="_blank" class="m-0">gratissex</a> | <a href="http://dating.boogolinks.nl" target="_blank" class="m-0">dating links</a></li>
-				    <li><a href="http://casualdating.bestelinks.nl" target="_blank" class="m-0">beste casualdating</a> | <a href="http://dating.bestelinks.nl" target="_blank" class="m-0">dating</a></li>
-					<li><a href="http://dating-websites.links.nl" target="_blank" class="m-0">dating-websites</a> | <a href="http://dating.links.nl" target="_blank" class="m-0">dating</a> | <a href="http://sexdate.links.nl" target="_blank" class="m-0">sexdate links</a></li>
-					<li><a href="http://dating.jouwbegin.nl" target="_blank" class="m-0">dating</a> | <a href="http://date.jouwbegin.nl" target="_blank" class="m-0">date begin</a></li>
-					<li><a href="http://gratis-datingsites.jouwpagina.nl" target="_blank" class="m-0">gratis-datingsites</a> | <a href="http://date.jouwpagina.nl" target="_blank" class="m-0">date pagina</a></li>
-					<li><a href="http://datingsites.jouwpagina.be" target="_blank" class="m-0">datingsites</a> | <a href="http://dating.jouwpagina.be" target="_blank" class="m-0">dating pagina be</a></li>
-					<li><a href="http://dating.uwpagina.nl" target="_blank" class="m-0">dating</a> | <a href="http://date.uwpagina.nl" target="_blank" class="m-0">date pagina</a></li>
-					<li><a href="http://dating.beginthier.nl" target="_blank" class="m-0">dating</a> | <a href="http://daten.beginthier.nl" target="_blank" class="m-0">daten begint hier</a></li>
-					<li><a href="http://dating.expertpagina.nl" target="_blank" class="m-0">expert dating</a> | <a href="http://date.expertpagina.nl" target="_blank" class="m-0">date</a> | <a href="http://sexdate.expertpagina.nl" target="_blank" class="m-0">sexdate pagina</a></li>
-					<li><a href="http://dating.startbewijs.nl" target="_blank" class="m-0">start dating</a> | <a href="http://sexdate.startbewijs.nl" target="_blank" class="m-0">sexdate bewijs</a></li>
-					<li><a href="http://dating.startplezier.nl" target="_blank" class="m-0">start dating</a> | <a href="http://date.startplezier.nl" target="_blank" class="m-0">date</a> | <a href="http://sexdate.startplezier.nl" target="_blank" class="m-0">sexdate plezier</a></li>
-					<li><a href="http://dating.b9.nl" target="_blank" class="m-0">dating</a> | <a href="http://date.b9.nl" target="_blank" class="m-0">date</a> | <a href="http://sexdate.b9.nl" target="_blank" class="m-0">sexdate b9</a></li>
-					<li><a href="http://dating.startpagina.net" target="_blank" class="m-0">start dating</a> | <a href="http://date.startpagina.net" target="_blank" class="m-0">date</a> | <a href="http://sexdate.startpagina.net" target="_blank" class="m-0">sexdate pagina</a></li>
-				</ul>
-			</div>
-			<div class="col-md-6 col-12">
-				<ul>
-					<li><a href="http://dating.eigenstart.nl" target="_blank" class="m-0">eigen dating</a> | <a href="http://date.eigenstart.nl" target="_blank" class="m-0">date start</a></li>
-					<li><a href="http://dating.linkspot.nl" target="_blank" class="m-0">dating link</a> | <a href="http://date.linkspot.nl" target="_blank" class="m-0">date spot</a> | <a href="http://sexdate.linkspot.nl" target="_blank" class="m-0">sexdate spot</a></li>
-					<li><a href="http://dating.allepaginas.nl" target="_blank" class="m-0">alle dating</a> | <a href="http://date.allepaginas.nl" target="_blank" class="m-0">date</a> | <a href="http://sexdate.allepaginas.nl" target="_blank" class="m-0">sexdate paginas</a></li>
-					<li><a href="http://dating.linkexplorer.nl" target="_blank" class="m-0">dating</a> | <a href="http://date.linkexplorer.nl" target="_blank" class="m-0">date explorer</a> | <a href="http://sexdate.linkexplorer.nl" target="_blank" class="m-0">sexdate explorer</a></li>
-					<li><a href="https://partnerzoeken.startpagina.nl/" target="_blank" class="m-0" title="partnerzoeken">partnerzoeken</a> | <a href="https://dating.opzijnbest.nl/" target="_blank" class="m-0" title="dating">dating opzijnbest</a> | <a href="https://dating.sitelinkje.nl" target="_blank" class="m-0" title="dating">dating sitelinkje</a></li>
-					<li><a href="http://dating.start.be" target="_blank" class="m-0">dating start</a> | <a href="http://date.start.be" target="_blank" class="m-0">date</a> | <a href="http://sexdate.start.be" target="_blank" class="m-0">sexdate belgië</a></li>
-					<li><a href="http://datingsites.favos.nl" target="_blank" class="m-0" title="datingsites">dating</a> | <a href="http://date.favos.nl" target="_blank" class="m-0">date favos</a> | <a href="http://sexdate.favos.nl" target="_blank" class="m-0">sexdate favos</a></li>
-					<li><a href="http://dating.vindjeviahier.nl" target="_blank" class="m-0">dating</a> | <a href="http://date.vindjeviahier.nl" target="_blank" class="m-0">date vind je via hier</a></li>
-					<li><a href="http://dating.eigenstart.be" target="_blank" class="m-0">eigen dating</a> | <a href="http://date.eigenstart.be" target="_blank" class="m-0">date start</a></li>
-					<li><a href="http://date.web-directory.be" target="_blank" class="m-0">date directory</a> | <a href="http://datingtips.web-directory.be" target="_blank" class="m-0" title="datingtips">datingtips web</a></li>
-					<li><a href="http://dating.tipjes.nl" target="_blank" class="m-0" title="dating">dating</a> | <a href="http://date.tipjes.nl" target="_blank" class="m-0" title="date">date</a> | <a href="http://sexdate.tipjes.nl" target="_blank" class="m-0" title="sexdate">sexdate tipjes</a></li>
-					<li><a href="http://dating.eigenoverzicht.nl" target="_blank" class="m-0">eigen dating</a> | <a href="http://date.eigenoverzicht.nl" target="_blank" class="m-0">date overzicht</a></li>
-					<li><a href="http://dating.webgidsje.nl" target="_blank" class="m-0">dating</a> | <a href="http://date.webgidsje.nl" target="_blank" class="m-0">date</a> | <a href="http://sexdate.webgidsje.nl" target="_blank" class="m-0">sexdate webgidsje</a></li>
-					<li><a href="http://dating.linkjespagina.nl" target="_blank" class="m-0">pagina dating</a> | <a href="http://date.linkjespagina.nl" target="_blank" class="m-0">date</a> | <a href="http://sexdate.linkjespagina.nl" target="_blank" class="m-0">sexdate linkjes</a></li>
-					<li><a href="http://dating.linkgoed.nl" target="_blank" class="m-0">link dating</a> | <a href="http://date.linkgoed.nl" target="_blank" class="m-0">date</a> | <a href="http://sexdate.linkgoed.nl" target="_blank" class="m-0">sexdate goed</a></li>
-					<li><a href="http://dating.m4n.nl/" target="_blank" class="m-0"> dating</a> | <a href="http://date.m4n.nl/" target="_blank" class="m-0">date m4n</a></li>
-					<li><a href="http://dating.zoekvinden.nl" target="_blank" class="m-0">zoek dating</a> | <a href="http://date.zoekvinden.nl" target="_blank" class="m-0">date</a> | <a href="http://sexdate.zoekvinden.nl" target="_blank" class="m-0">sexdate vinden</a></li>
-				</ul>
-			</div>
-			<div class="col-md-6 col-12">
-				<ul>
-					<a href="http://www.linkorado.com/">Linkorado</a><br />Linkorado is a link exchange directory where you can find websites related to your site and request link exchanges<br /><br />
-				</ul>
-			</div>
-		</div>
-	</div>
+    <div class="jumbotron my-4">
+        <h1 class="text-center">Partnerlinks:</h1>
+        <div class="row">
+<?php
+    $chunks = array_chunk($partnerLinks, ceil(count($partnerLinks) / 2));
+    foreach ($chunks as $chunk):
+?>
+            <div class="col-md-6 col-12">
+                <ul>
+<?php foreach ($chunk as $link): ?>
+                    <li><a href="<?= $link['url'] ?>" target="_blank" class="m-0"><?= $link['label'] ?></a></li>
+<?php endforeach; ?>
+                </ul>
+            </div>
+<?php endforeach; ?>
+            <div class="col-md-6 col-12">
+                <ul>
+                    <li><a href="http://www.linkorado.com/" target="_blank" class="m-0">Linkorado</a></li>
+                    Linkorado is a link exchange directory where you can find websites related to your site and request link exchanges<br /><br />
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 <?php
-	include('includes/footer.php');
+    include('includes/footer.php');
 ?>
