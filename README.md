@@ -43,6 +43,8 @@ Point your browser to [http://localhost:8000](http://localhost:8000) to view the
 
 The frontend uses Vue.js with Axios to fetch dating profiles from a remote API. The API base URL can be configured via the `BASE_API_URL` environment variable and defaults to `https://20fhbe2020.be`. Endpoints are defined in `includes/config.php` and included where needed so the strings aren't duplicated. The PHP files mainly generate the HTML structure (header, navigation and footer) and provide dynamic meta tags.
 
+PHP error display is disabled by default. Set the `APP_DEBUG` environment variable to `true` when developing to enable verbose error output.
+
 ## License and attribution
 
 This project is released under the MIT License. The layout originates from the [Start Bootstrap Heroic Features](https://github.com/BlackrockDigital/startbootstrap-heroic-features) template.

@@ -3,9 +3,12 @@
   include('includes/nav_items.php');
   $config = include(__DIR__ . '/config.php');
 
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
+  // Enable verbose error reporting only when APP_DEBUG=true
+  if (!empty($config['DEBUG'])) {
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+  }
 ?>
 
 <!DOCTYPE html>
