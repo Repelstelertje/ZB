@@ -1,7 +1,11 @@
 <?php
-    error_reporting(-1);
-		ini_set('display_errors', 1);
-	define("TITLE", "De beste datingsite van België");
+    $config = include('includes/config.php');
+    if (!empty($config['DEBUG'])) {
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+    }
+        define("TITLE", "De beste datingsite van België");
 
     include("includes/array_prov.php");
     include("includes/array_tips.php");
