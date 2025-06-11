@@ -1,6 +1,7 @@
 <?php
   $companyName = "Zoekertjes België";
   include('includes/nav_items.php');
+  $config = include(__DIR__ . '/config.php');
 
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
@@ -17,10 +18,10 @@
     <meta http-equiv="Content-Security-Policy" content="
     default-src *; 
     font-src 'self' https://fonts.gstatic.com;
-    img-src 'self' https://16hl07csd16.nl/ https://region1.google-analytics.com www.googletagmanager.com https://ssl.gstatic.com https://www.gstatic.com https://www.google-analytics.com https://20fhbe2020.be/;
+    img-src 'self' https://16hl07csd16.nl/ https://region1.google-analytics.com www.googletagmanager.com https://ssl.gstatic.com https://www.gstatic.com https://www.google-analytics.com <?php echo $config['BASE_API_URL']; ?>/;
     style-src 'self' https://tagmanager.google.com https://fonts.googleapis.com/ 'unsafe-inline'; 
     style-src-elem 'self' https://tagmanager.google.com https://fonts.googleapis.com/ 'unsafe-inline'; 
-    connect-src 'self' https://region1.google-analytics.com https://tagmanager.google.com/ https://www.google-analytics.com https://16hl07csd16.nl/ https://20fhbe2020.be/;
+    connect-src 'self' https://region1.google-analytics.com https://tagmanager.google.com/ https://www.google-analytics.com https://16hl07csd16.nl/ <?php echo $config['BASE_API_URL']; ?>/;
     script-src 'self' http://* https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/ https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/ 'nonce-googletagmanager' 'nonce-2726c7f26c' 'sha256-WwSlXI54tpz3oRisOne8KKEqXFjbTYCI2AzKef7+7nE=' 'unsafe-inline' 'unsafe-eval'
     ">
     <link rel="apple-touch-icon" sizes="57x57" href="img/fav/apple-icon-57x57.png">

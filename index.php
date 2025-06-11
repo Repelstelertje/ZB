@@ -5,7 +5,7 @@
 
     include("includes/array_prov.php");
     include("includes/array_tips.php");
-  	include("includes/header.php");
+    include("includes/header.php");
 ?>
 <div class="container">
     <!-- Jumbotron Header -->
@@ -43,7 +43,7 @@
         </div>
     </div>
     <script nonce="2726c7f26c">
-        var api_url= "https://20fhbe2020.be/profile/banner9/120";
+        var api_url= "<?php echo $config['BANNER_ENDPOINT']; ?>";
     </script>
     <!-- Pagination -->
     <nav class="nav-pag" aria-label="Page navigation">

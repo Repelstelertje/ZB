@@ -1,7 +1,7 @@
-<?php 
+<?php
 
   include('includes/array_prov.php');
-	include('includes/header.php');
+        include('includes/header.php');
 
 	function strip_bad_chars( $input ) {
 		$output = preg_replace( "/[^a-zA-Z0-9_-]/", "",$input);
@@ -43,7 +43,7 @@
         </div>
       </div>
       <script nonce="2726c7f26c">
-        var api_url= "https://20fhbe2020.be/profile/province/be/<?=$zoek['name']?>/120";
+        var api_url= "<?php echo $config['PROVINCE_ENDPOINT'] . '/' . $zoek['name'] . '/120'; ?>";
       </script>
 
       <!-- Pagination -->
