@@ -143,7 +143,7 @@
             'dating-waals-brabant' => [
                 'title' => 'Dating in Waals-Brabant - Vind je Match op Zoekertjes België',
                 'description' => 'Ontmoet singles in Waals-Brabant en plaats je datingoproep via Zoekertjes België.',
-                'image' => 'https://zoekertjesbelgie.be/img//belgie/waalsbrabant.jpg'
+                'image' => 'https://zoekertjesbelgie.be/img/belgie/waalsbrabant.jpg'
             ],
             'dating-west-vlaanderen' => [
                 'title' => 'Dating in West-Vlaanderen - Ontmoet Nieuwe Mensen via Zoekertjes België',
