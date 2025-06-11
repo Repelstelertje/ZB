@@ -14,11 +14,11 @@
 </footer>
 </div> <!-- /.oproepjes -->
 
-<script src="https://16hl07csd16.nl/cdn/oproepjes/js/vue.2.5.13.min.js"></script>
-<script src="https://16hl07csd16.nl/cdn/oproepjes/js/axios.0.17.1.min.js"></script>
+<script src="js/vendor/vue.2.5.13.min.js"></script>
+<script src="js/vendor/axios.0.17.1.min.js"></script>
 
-<script src="https://16hl07csd16.nl/cdn/oproepjes/jquery/jquery.min.js"></script>
-<script src="https://16hl07csd16.nl/cdn/oproepjes/js/bootstrap.bundle.min.js"></script>
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/vue-router@3.5.3"></script>
 
 <script type="text/javascript"   nonce="2726c7f26c" SameSite=None; Secure>
