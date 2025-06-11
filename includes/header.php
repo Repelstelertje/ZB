@@ -54,8 +54,26 @@
             $canonicalUrl = $baseUrl . "/dating-" . htmlspecialchars($_GET['item']);
             $title = "Dating " . htmlspecialchars($_GET['item']);
         } else if (isset($_GET['id'])) {
-            $canonicalUrl = $baseUrl . "/profile?id=" . htmlspecialchars($_GET['id']);
-            $title = "Daten met " . htmlspecialchars($_GET['id']);
+            $id = preg_replace('/[^0-9]/', '', $_GET['id']);
+            $apiResponse = @file_get_contents("https://20fhbe2020.be/profile/get0/8/" . $id);
+            if ($apiResponse !== false) {
+                $data = json_decode($apiResponse, true);
+                if (isset($data['profile']['name'])) {
+                    $profileName = $data['profile']['name'];
+                    $slug = strtolower($profileName);
+                    $slug = preg_replace('/\s+/', '-', $slug);
+                    $slug = preg_replace('/[^a-z0-9-]/', '', $slug);
+                    $slug = trim($slug, '-');
+                    $canonicalUrl = $baseUrl . '/daten-met-' . $slug;
+                    $title = 'Daten met ' . htmlspecialchars($profileName);
+                } else {
+                    $canonicalUrl = $baseUrl . "/profile?id=" . htmlspecialchars($_GET['id']);
+                    $title = "Daten met " . htmlspecialchars($_GET['id']);
+                }
+            } else {
+                $canonicalUrl = $baseUrl . "/profile?id=" . htmlspecialchars($_GET['id']);
+                $title = "Daten met " . htmlspecialchars($_GET['id']);
+            }
         } else if (isset($_GET['tip'])) {
             $canonicalUrl = $baseUrl . "/datingtips-" . htmlspecialchars($_GET['tip']);
             $title = "Datingtips " . htmlspecialchars($_GET['tip']);
