@@ -12,6 +12,19 @@
   </ul>
     <span class="sub-text">Copyright &copy; <?php echo date('Y'); ?> <?php echo $companyName; ?> | De gratis datingsite van België </span>
 </footer>
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #ccc; font-family: Arial, sans-serif; padding: 20px; z-index: 10000; display: none;">
+  <div style="max-width: 960px; margin: auto;">
+    <p style="margin-bottom: 10px;">We use cookies to personalize content and ads, to provide social media features and to analyze our traffic. For more details, see our <a href="/cookie-policy.php" target="_blank">Cookie Policy</a>.</p>
+    <form id="cookie-form">
+      <label><input type="checkbox" disabled checked> Necessary (required)</label><br>
+      <label><input type="checkbox" id="cookie-statistics"> Statistics (e.g. Google Analytics)</label><br>
+      <label><input type="checkbox" id="cookie-marketing"> Marketing (e.g. Google Ads, Meta Pixel)</label><br><br>
+      <button type="submit" style="background-color: #007BFF; color: white; border: none; padding: 10px 15px; margin-right: 10px; cursor: pointer;">Save preferences</button>
+      <button type="button" onclick="acceptAllCookies()" style="background-color: #28a745; color: white; border: none; padding: 10px 15px; cursor: pointer;">Accept all</button>
+    </form>
+  </div>
+</div>
 </div> <!-- /.oproepjes -->
 
 <script src="js/vendor/vue.2.5.13.min.js"></script>
@@ -20,6 +33,7 @@
 <script src="js/vendor/jquery.min.js"></script>
 <script src="js/vendor/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/vue-router@3.5.3"></script>
+<script src="js/cookie-consent.js"></script>
 
 <script type="text/javascript"   nonce="2726c7f26c" SameSite=None; Secure>
   ////Random IMG
