@@ -41,7 +41,7 @@ Point your browser to [http://localhost:8000](http://localhost:8000) to view the
 
 ## PHP and JavaScript
 
-The frontend uses Vue.js with Axios to fetch dating profiles from an external API (`20fhbe2020.be`). The PHP files mainly generate the HTML structure (header, navigation and footer) and provide dynamic meta tags.
+The frontend uses Vue.js with Axios to fetch dating profiles from a remote API. The API base URL can be configured via the `BASE_API_URL` environment variable and defaults to `https://20fhbe2020.be`. Endpoints are defined in `includes/config.php` and included where needed so the strings aren't duplicated. The PHP files mainly generate the HTML structure (header, navigation and footer) and provide dynamic meta tags.
 
 ## License and attribution
 
