@@ -29,7 +29,7 @@
     <div id="footer-banner"></div>
 </div><!-- Container -->
 
-<script nonce="2726c7f26c">
+<script>  
     var api_url= "<?php echo $config['PROFILE_ENDPOINT']; ?>";
     var ref_id= "32"; //de ref_id vd landingwebsite
 </script>

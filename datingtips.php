@@ -4,8 +4,7 @@
   	include('includes/array_tips.php');
   	include('includes/array_prov.php');
 	include('includes/header.php');
-
-        include('includes/utils.php');
+    include('includes/utils.php');
 	
 	if(isset($_GET['tip'])) {
 		$datingtip = strip_bad_chars( $_GET['tip'] );

@@ -92,27 +92,22 @@
     <div class="jumbotron my-4">
         <h1 class="text-center">Partnerlinks:</h1>
         <div class="row">
-<?php
-    $chunks = array_chunk($partnerLinks, ceil(count($partnerLinks) / 2));
-    foreach ($chunks as $chunk):
-?>
+            <?php
+                $columns = array_chunk($partnerLinks, ceil(count($partnerLinks)/2));
+                foreach ($columns as $col) {
+                    echo "<div class=\"col-md-6 col-12\"><ul>";
+                    foreach ($col as $link) {
+                        echo "<li><a href=\"{$link['url']}\" target=\"_blank\" class=\"m-0\">{$link['label']}</a></li>";
+                    }
+                    echo "</ul></div>";
+                }
+            ?>
             <div class="col-md-6 col-12">
                 <ul>
-<?php foreach ($chunk as $link): ?>
-                    <li><a href="<?= $link['url'] ?>" target="_blank" class="m-0"><?= $link['label'] ?></a></li>
-<?php endforeach; ?>
+                    <a href="https://www.linkorado.com/">Linkorado</a><br />Linkorado is a link exchange directory where you can find websites related to your site and request link exchanges<br /><br />
                 </ul>
             </div>
-<?php endforeach; ?>
-            <div class="col-md-6 col-12">
-                <ul>
-                    <li><a href="http://www.linkorado.com/" target="_blank" class="m-0">Linkorado</a></li>
-                    Linkorado is a link exchange directory where you can find websites related to your site and request link exchanges<br /><br />
-                </ul>
-            </div>
-        </div>
+        </div><!-- row -->
     </div>
-</div>
-<?php
-    include('includes/footer.php');
-?>
+</div><!-- /.container -->
+<?php include('includes/footer.php'); ?>

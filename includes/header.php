@@ -1,7 +1,7 @@
 <?php
   $companyName = "Zoekertjes België";
   include('includes/nav_items.php');
-  $config = include(__DIR__ . '/config.php');
+  include('includes/config.php');
 
   // Enable verbose error reporting only when APP_DEBUG=true
   if (!empty($config['DEBUG'])) {
@@ -10,7 +10,6 @@
     error_reporting(E_ALL);
   }
 ?>
-
 <!DOCTYPE html>
 <html lang="nl-BE">
 <head>
@@ -18,15 +17,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Gratis dating - Ben jij op zoek naar een partner of een leuke gratis date? Hier vind je meer dan 10.000 vrijgezellen. Aanmelding is 100% gratis.">
     <meta name="author" content="Zoekertjes Belgie">
-    <meta http-equiv="Content-Security-Policy" content="
-    default-src *; 
-    font-src 'self' https://fonts.gstatic.com;
-    img-src 'self' https://16hl07csd16.nl/ https://region1.google-analytics.com www.googletagmanager.com https://ssl.gstatic.com https://www.gstatic.com https://www.google-analytics.com https://www.google.com <?php echo $config['BASE_API_URL']; ?>/;
-    style-src 'self' https://tagmanager.google.com https://fonts.googleapis.com/ 'unsafe-inline'; 
-    style-src-elem 'self' https://tagmanager.google.com https://fonts.googleapis.com/ 'unsafe-inline'; 
-    connect-src 'self' https://region1.google-analytics.com https://tagmanager.google.com/ https://www.google-analytics.com https://www.google.com https://16hl07csd16.nl/ <?php echo $config['BASE_API_URL']; ?>/;
-    script-src 'self' http://* https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/ https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/ 'nonce-googletagmanager' 'nonce-2726c7f26c' 'sha256-WwSlXI54tpz3oRisOne8KKEqXFjbTYCI2AzKef7+7nE=' 'unsafe-inline' 'unsafe-eval'
-    ">
     <link rel="apple-touch-icon" sizes="57x57" href="img/fav/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="img/fav/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/fav/apple-icon-72x72.png">
@@ -49,7 +39,6 @@
         $baseUrl = "https://zoekertjesbelgie.be";
         $canonicalUrl = $baseUrl; // Default canonical URL
         $title = "Zoekertjes België"; // Default title
-
         if (isset($_GET['item'])) {
             $canonicalUrl = $baseUrl . "/dating-" . htmlspecialchars($_GET['item']);
             $title = "Dating " . htmlspecialchars($_GET['item']);
@@ -78,113 +67,88 @@
             $canonicalUrl = $baseUrl . "/datingtips-" . htmlspecialchars($_GET['tip']);
             $title = "Datingtips " . htmlspecialchars($_GET['tip']);
         }
-
         echo '<link rel="canonical" href="' . $canonicalUrl . '" >';
         echo '<title>' . $title . '</title>';
     ?>
-
     <?php
-        // standaardwaarden
+        // Stel standaardwaarden in
         $default_title = "Zoekertjes België - Vind en Plaats zoekertjes in België";
         $default_description = "Zoek en plaats eenvoudig oproepjes in heel België. Van dating tot vriendschap, ontdek de beste oproepjes op Zoekertjes België.";
-        $default_image = "https://zoekertjesbelgie.be/img/bg.jpg";
-        $default_url = "https://zoekertjesbelgie.be";
-
+        $default_image = $baseUrl . "/img/bg.jpg";
+        $default_url = $baseUrl;
         // Dynamisch genereren van inhoud gebaseerd op de pagina-URL
         $current_url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
         // Mapping van URL-sleutels naar Open Graph gegevens
-        $og_mappings = [
+        $og_title = $default_title;
+        $og_description = $default_description;
+        $og_image = $default_image;
+        $og_url = $default_url;
+        $og_pages = [
             'dating-antwerpen' => [
                 'title' => 'Dating in Antwerpen - Vind je Match op Zoekertjes België',
                 'description' => 'Op zoek naar een date in Antwerpen? Plaats je oproepje of reageer op anderen via Zoekertjes België.',
-                'image' => 'https://zoekertjesbelgie.be/img/belgie/antwerpen.jpg'
+                'image' => $baseUrl . '/img/belgie/antwerpen.jpg'
             ],
             'dating-brussel' => [
                 'title' => 'Dating in Brussel - Ontmoet Singles via Zoekertjes België',
                 'description' => 'Vind singles in Brussel en plaats je datingoproep eenvoudig via Zoekertjes België.',
-                'image' => 'https://zoekertjesbelgie.be/img/belgie/brussel.jpg'
+                'image' => $baseUrl . '/img/belgie/brussel.jpg'
             ],
             'dating-henegouwen' => [
                 'title' => 'Dating in Henegouwen - Vind Je Date op Zoekertjes België',
                 'description' => 'Zoek of plaats een datingoproep in Henegouwen. Ontmoet nieuwe mensen via Zoekertjes België.',
-                'image' => 'https://zoekertjesbelgie.be/img/belgie/henegouwen.jpg'
+                'image' => $baseUrl . '/img/belgie/henegouwen.jpg'
             ],
             'dating-limburg' => [
                 'title' => 'Dating in Limburg - Ontmoet Singles via Zoekertjes België',
                 'description' => 'Plaats of bekijk datingoproepjes in Limburg op Zoekertjes België en ontmoet nieuwe mensen.',
-                'image' => 'https://zoekertjesbelgie.be/img/belgie/limburg.jpg'
+                'image' => $baseUrl . '/img/belgie/limburg.jpg'
             ],
             'dating-luik' => [
                 'title' => 'Dating in Luik - Vind je Match op Zoekertjes België',
                 'description' => 'Ontmoet singles in Luik en plaats je oproepje eenvoudig op Zoekertjes België.',
-                'image' => 'https://zoekertjesbelgie.be/img/belgie/luik.jpg'
+                'image' => $baseUrl . '/img/belgie/luik.jpg'
             ],
             'dating-luxemburg' => [
                 'title' => 'Dating in Luxemburg - Vind Singles via Zoekertjes België',
                 'description' => 'Zoek of plaats een datingoproep in Luxemburg via Zoekertjes België en ontmoet nieuwe mensen.',
-                'image' => 'https://zoekertjesbelgie.be/img/belgie/luxemburg.jpg'
+                'image' => $baseUrl . '/img/belgie/luxemburg.jpg'
             ],
             'dating-namen' => [
                 'title' => 'Dating in Namen - Ontmoet Singles via Zoekertjes België',
                 'description' => 'Vind of plaats een datingoproep in Namen op Zoekertjes België en vergroot je kansen op een geslaagde date.',
-                'image' => 'https://zoekertjesbelgie.be/img/belgie/namen.jpg'
+                'image' => $baseUrl . '/img/belgie/namen.jpg'
             ],
             'dating-oost-vlaanderen' => [
                 'title' => 'Dating in Oost-Vlaanderen - Vind je Date op Zoekertjes België',
                 'description' => 'Ontmoet singles in Oost-Vlaanderen en plaats eenvoudig je oproepje via Zoekertjes België.',
-                'image' => 'https://zoekertjesbelgie.be/img/belgie/oostvlaanderen.jpg'
+                'image' => $baseUrl . '/img/belgie/oostvlaanderen.jpg'
             ],
             'dating-vlaams-brabant' => [
                 'title' => 'Dating in Vlaams-Brabant - Vind Singles via Zoekertjes België',
                 'description' => 'Zoek of plaats een datingoproep in Vlaams-Brabant op Zoekertjes België en ontmoet nieuwe mensen.',
-                'image' => 'https://zoekertjesbelgie.be/img/belgie/vlaamsbrabant.jpg'
+                'image' => $baseUrl . '/img/belgie/vlaamsbrabant.jpg'
             ],
             'dating-waals-brabant' => [
                 'title' => 'Dating in Waals-Brabant - Vind je Match op Zoekertjes België',
                 'description' => 'Ontmoet singles in Waals-Brabant en plaats je datingoproep via Zoekertjes België.',
-                'image' => 'https://zoekertjesbelgie.be/img/belgie/waalsbrabant.jpg'
+                'image' => $baseUrl . '/img/belgie/waalsbrabant.jpg'
             ],
             'dating-west-vlaanderen' => [
                 'title' => 'Dating in West-Vlaanderen - Ontmoet Nieuwe Mensen via Zoekertjes België',
                 'description' => 'Plaats of bekijk datingoproepjes in West-Vlaanderen via Zoekertjes België en vind je date.',
-                'image' => 'https://zoekertjesbelgie.be/img/belgie/westvlaanderen.jpg'
+                'image' => $baseUrl . '/img/belgie/westvlaanderen.jpg'
             ],
-            'datingtips-stout-contact' => [
-                'title' => 'Datingtips Stout Contact',
-                'description' => 'Ontdek de Opwinding van Stout Contact: Alles Wat Je Moet Weten Over Sensueel Verbinden',
-                'image' => 'https://zoekertjesbelgie.be/img/datingtips/stoutcontact.jpg'
-            ],
-            'datingtips-gratis-dating' => [
-                'title' => 'Datingtips Gratis Dating',
-                'description' => 'De Ultieme Gids voor Gratis Dating: Vind de Liefde zonder de Portemonnee te Trekken',
-                'image' => 'https://zoekertjesbelgie.be/img/datingtips/datingtips1.jpg'
-            ],
-            'datingtips-gegarandeerd-een-date' => [
-                'title' => 'Datingtips Gegarandeed een date',
-                'description' => 'Datingtips - In 3 stappen gegarandeerd een date!',
-                'image' => 'https://zoekertjesbelgie.be/img/datingtips/datingtips2.jpg'
-            ]
         ];
-
-        $found = false;
-        foreach ($og_mappings as $keyword => $data) {
+        // Zoek een match in de array
+        foreach ($og_pages as $keyword => $data) {
             if (strpos($current_url, $keyword) !== false) {
                 $og_title = $data['title'];
                 $og_description = $data['description'];
                 $og_image = $data['image'];
                 $og_url = $current_url;
-                $found = true;
                 break;
             }
-        }
-
-        if (!$found) {
-            // Standaardwaarden als de pagina geen specifieke inhoud heeft
-            $og_title = $default_title;
-            $og_description = $default_description;
-            $og_image = $default_image;
-            $og_url = $default_url;
         }
     ?>
 
@@ -202,21 +166,11 @@
     <meta name="twitter:image" content="<?php echo $og_image; ?>">
     <meta name="twitter:url" content="<?php echo $og_url; ?>">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGF9E4WFZD" nonce="2726c7f26c" SameSite=None; Secure></script>
-    <script nonce="2726c7f26c" SameSite=None; Secure>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-ZGF9E4WFZD');
-    </script>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
 </head>
-
 <body id="top">
     <div id="oproepjes">
         <!-- Navigation -->

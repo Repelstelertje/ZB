@@ -7,7 +7,7 @@
     <h1>Privacybeleid – zoekertjesbelgie.be</h1>
     <p>Bij zoekertjesbelgie.be hechten we veel waarde aan jouw privacy. In dit beleid leggen we uit welke persoonsgegevens we verzamelen, waarom we dat doen, en wat jouw rechten zijn.</p>
     <h2>1. Wie zijn wij?</h2>
-    <p>zoekertjesbelgie.be is onderdeel van [bedrijfsnaam invullen, indien van toepassing], gevestigd in België. Voor vragen over dit beleid kun je contact opnemen via <a href="mailto:info@zoekertjesbelgie.be">info@zoekertjesbelgie.be</a>.</p>
+    <p>zoekertjesbelgie.be is gevestigd in België. Voor vragen over dit beleid kun je contact opnemen via <a href="mailto:info@zoekertjesbelgie.be">info@zoekertjesbelgie.be</a>.</p>
     <h2>2. Welke gegevens verzamelen wij?</h2>
     <p>Wij verzamelen alleen persoonsgegevens die jij zelf aan ons verstrekt of die automatisch worden gegenereerd bij het gebruik van de website. Dit betreft onder andere:</p>
     <ul>

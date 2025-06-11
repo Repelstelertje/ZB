@@ -5,7 +5,7 @@
         ini_set('display_startup_errors', 1);
         error_reporting(E_ALL);
     }
-        define("TITLE", "De beste datingsite van België");
+    define("TITLE", "De beste datingsite van België");
 
     include("includes/array_prov.php");
     include("includes/array_tips.php");
@@ -19,9 +19,9 @@
         <p>Op deze gratis datingsite staan alle contactadvertenties België. Kijk snel tussen de zoekertjes om in contact te komen met vrouwen voor gratis dating. Hier kan jij jezelf anoniem en gratis inschrijven met een zelfgekozen profielnaam. Ook blijft jouw e-mailadres altijd geheim voor andere leden. Voor wie echt helemaal anoniem wil blijven, bestaat de mogelijkheid om geen foto op het profiel te tonen.</p>
         <h2>Zoek hier vrouwen bij jou in buurt!</h2>
         <?php
-        foreach ($navItems as $item) {
-            echo "<a class=\"btn btn-primary prov-btn\" href=\"$item[slug]\">$item[title]</a>";
-        }
+            foreach ($navItems as $item) {
+                echo "<a class=\"btn btn-primary prov-btn\" href=\"$item[slug]\">$item[title]</a>";
+            }
         ?>
     </div>
     <div id="top-banner"></div>
@@ -31,49 +31,61 @@
     <div class="row" v-cloak>
         <div class="col-lg-3 col-md-6 mb-4 portfolio-item" id="Slankie" v-for="profile in filtered_profiles">
             <div class="card h-100">
-                <a :href="'daten-met-' + slugify(profile.name) + '?id=' + profile.id"><img class="card-img-top" :src="profile.src.replace('150x150', '300x300')" :alt="profile.name + ' daten in Flevoland'" @error="imgError"></a>
+                <a :href="'daten-met-' + slugify(profile.name) + '?id=' + profile.id"><img class="card-img-top" :src="profile.src.replace('150x150', '300x300')" :alt="profile.name + ' daten in België'" @error="imgError"></a>
                 <div class="card-body">
-                <div class="card-top">
-                    <h4 class="card-title">{{ profile.name }}</h4>  
+                    <div class="card-top">
+                        <h4 class="card-title">{{ profile.name }}</h4>  
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Leeftijd: {{ profile.age }}</li>
+                        <li class="list-group-item">Relatie: {{ profile.relationship }}</li>
+                        <li class="list-group-item">Stad: {{ profile.city }}</li>
+                        <li class="list-group-item">Provincie: {{ profile.province }}</li>
+                    </ul>
                 </div>
-                <ul class="list-group">
-                    <li class="list-group-item">Leeftijd: {{ profile.age }}</li>
-                    <li class="list-group-item">Relatie: {{ profile.relationship }}</li>
-                    <li class="list-group-item">Stad: {{ profile.city }}</li>
-                    <li class="list-group-item">Provincie: {{ profile.province }}</li>
-                </ul>
+                <a :href="'daten-met-' + slugify(profile.name) + '?id=' + profile.id" class="card-footer btn btn-primary">Bekijk profiel</a>
             </div>
-            <a :href="'daten-met-' + slugify(profile.name) + '?id=' + profile.id" class="card-footer btn btn-primary">Bekijk profiel</a>
         </div>
-    </div>
-    <script nonce="2726c7f26c">
-        var api_url= "<?php echo $config['BANNER_ENDPOINT']; ?>";
-    </script>
-    <!-- Pagination -->
-    <nav class="nav-pag" aria-label="Page navigation">
-        <ul class="pagination flex-wrap justify-content-center">
-                <li class="page-item"><a class="page-link" aria-label="Vorige" v-on:click="set_page_number(page-1)" > <span aria-hidden="true">&laquo;</span> <span class="sr-only">Vorige</span> </a>
-            </li>
-            <li v-for="page_number in max_page_number" class="page-item" v-bind:class="{ active: page_number == page }" >
-                <a class="page-link" v-on:click="set_page_number(page_number)">{{ page_number }}</a>
-            </li>  
-            <li class="page-item">
-                <a class="page-link" aria-label="Volgende" v-on:click="set_page_number(page+1)" > <span aria-hidden="true">&raquo;</span> <span class="sr-only">Volgende</span> </a>
-            </li>
-        </ul>
-    </nav>
+        <script>
+            var api_url= "<?php echo $config['BANNER_ENDPOINT']; ?>";
+        </script>
+        <!-- Pagination -->
+        <nav class="nav-pag" aria-label="Page navigation">
+            <ul class="pagination flex-wrap justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" aria-label="Vorige" v-on:click="set_page_number(page-1)" ><span aria-hidden="true">&laquo;</span><span class="sr-only">Vorige</span></a>
+                </li>
+                <li v-for="page_number in max_page_number" class="page-item" v-bind:class="{ active: page_number == page }" >
+                    <a class="page-link" v-on:click="set_page_number(page_number)">{{ page_number }}</a>
+                </li>  
+                <li class="page-item">
+                    <a class="page-link" aria-label="Volgende" v-on:click="set_page_number(page+1)" ><span aria-hidden="true">&raquo;</span><span class="sr-only">Volgende</span></a>
+                </li>
+            </ul>
+        </nav>
     </div><!-- /.row -->
     <div class="jumbotron">
-        <h2 class="text-center">Date ervaringen</h2>
+        <h2>Gratis datingsite</h2>
         <hr>
-        <p><em>“Wij (Elisa en Wim) willen jullie echt heel erg bedanken!! Vlak voor de zomer hebben wij elkaar gevonden via jullie website zoekertjes België. We waren beiden op zoek naar gezelschap, eigenlijk niet eens per sé romantisch of een vaste relatie. We zijn beiden enigszins op leeftijd en het is dan niet altijd even makkelijk, om iemand te vinden met wie je een mooie vriendschapsband kunt aangaan. In ons geval was het echter allesbehalve moeilijk. We houden beiden van een spelletje en een gezellig praatje op z’n tijd en spreken wekelijks af om van elkaars gezelschap te genieten. We hebben beiden veel gereisd en dat is nu achter de rug, dus genoeg verhalen om elkaar mee te vermaken! Bedankt voor jullie leuke contacten en het feit dat het ons bij elkaar heeft gebracht! Dankzij zoekertjes België hebben wij een partner voor het leven gevonden.”</em><br />
-        <span class="stelletje"> - Elisa en Wim</span></p>
+        <p>Je hoort het weleens vaker, dat je collega, vriend een leuke internetdate heeft gehad. Meestal gebeurt dit op een gratis datingsite zoals deze. Tegenwoordig gebruiken bijna alle singels in Nederland op het internet gratis dating om afspraakjes te maken. Er zijn ook veel betaalde datingsites maar Zoekertjes België is 100% gratis. Daardoor zijn er duizenden leden die gratis chatten op zoek naar een date. Er is veel aanbod dus hoe zorg je er nu voor dat je met gratis daten via het internet succes hebt?</p>
+        <h3>Succes met gratis dating</h3>
+        <p><span>Val op met een profielfoto</span> op jouw profiel zodat iedereen kan zien hoe jij eruit ziet. Uit onderzoek bij onze leden blijkt dat singles met een foto veel meer kans op een date hebben. Zorg dat je een leuke profielfoto hebt waarmee jij opvalt tussen de andere vrijgezellen. Gratis dating trekt veel mensen aan dus het is belangrijk om op te vallen.</p>
+        <p><span>Flirt erop los</span> zodat jij meer opvalt bij de vrouw waarmee jij wil daten. Stuur iemand die jij leuk vind een gratis flirt om haar aandacht te trekken. Wie weet krijg jij gelijk een reactie op jouw flirt en is het eerste contact gelegd. Bij een fijne klik is een afspraakje dan zo gemaakt! Hoe die wordt ingevuld? Dat laten we natuurlijk aan de tortelduifjes over, met een klein beetje hulp van Cupido.</p>
+        <h2>Waarom een gratis datingsite werkt</h2>
         <hr>
-        <p><em>“Mijn naam is Peter en ik ben een week of 4 geleden lid van jullie datingsite geworden. Ik was eerst een beetje sceptisch, je hoort immers zoveel verhalen over online dating. Na een paar dagen begon ik alles een beetje door te krijgen en kwam ik op het profiel van Maria. Onwijs leuke spontane dame, met een nog veel leukere lach. We raakten aan de praat en besloten na een aantal weken elkaar dan eindelijk te ontmoeten. Er was echt meteen een klik!! Ik kan me niet eens herinneren wanneer ik voor het laatst zoveel heb gelachen met een vrouw. Ze heeft een dochter en zoon, eigenlijk voelt het voor mij alsof ik eindelijk de vader ben aangezien Maria geen contact meer heeft met de vader van haar kinderen. Dus ik wilde jullie, zoekertjes België echt bedanken. Zonder jullie had ik haar misschien nooit ontmoet. Dankjewel!”</em><br />
-        <span class="stelletje"> - Peter en Maria</span></p>
-        <hr>
-        <p><em>“Mijn naam is Jean. Ik ben ruim een jaar geleden begonnen met online dating, omdat het voor mij soms moeilijk is om mensen te ontmoeten vanwege mijn beperkingen. Ik ben namelijk vanaf mijn geboorte zeer slechthorend. Hoewel het voor mij niet altijd een hindernis is, blijkt het voor sommigen toch een behoorlijke opgave. Men moet immers gebarentaal kennen dan wel leren, voor velen is dit een lastige opgave en kiezen ze ervoor geen relatie aan te gaan. Via jullie website Zoekertjes België ben ik in contact gekomen met Juliette. Zij bleek een dochtertje te hebben, die op jonge leeftijd ook haar gehoor is verloren. Dit gaf meteen een gevoel van (h)erkenning. We zijn inmiddels al maanden samen, maar wilde via deze weg toch even een bedankje sturen aan zoekertjes België. Fantastisch dat mensen elkaar op deze manier kunnen bereiken! Chapeau!”</em><br />
-        <span class="stelletje"> - Jean en Juliette</span></p>
+        <p>Ben je op zoek naar een nieuwe liefde, of wil je zo nu en dan leuk afspraakje? Op Zoekertjes België vind je duizenden vrijgezellen die precies hetzelfde zoeken! En wat is er nou mooier dan één gratis dating plek waar al die singles bij elkaar komen? Zoek in jouw provincie naar een single dame waarmee jij wil daten. Stuur haar een gratis bericht en meld je aan om verder met haar te kunnen chatten.</p>
+        <p>Je wilt toch wel wat te weten komen over degene waar je misschien snel tegenover zit in een leuk restaurant! Er zijn steeds meer vrijgezelle dames in Nederland en daarvan schrijven er zich veel in op deze gratis datingsite. De vaak gemaakte afspraakjes zorgen dus ook voor veel succesverhalen, en daar zijn wij als Zoekertjes België trots op! Voor degenen die wat zenuwachtig zijn? Samen kun je alle tijd nemen om eerst het ijs te breken, want dat maakt je eerste date immers een stuk ontspannender. Of misschien wel spannend ;)</p>
+        <h3>Gratis chatten</h3>
+        <p>Gratis dating zorgt ervoor dat er naar hartelust gratis gechat kan worden. Door eerst wat gratis berichten uit te wisselen kan je makkelijker uit jouw comfort-zone komen. Het is die welbekende comfort-zone waar de mensen soms wat moeite mee hebben om uit te komen. Daarom heeft Zoekertjes België een platform gecreëerd waar singles elkaar op hun eigen tempo kunnen toelaten in elkaars leven. Want met zijn tweetjes in die roze bubble, voelt vaak al fijn en vertrouwd aan. En wie weet is dat wel in dezelfde provincie, of zelfs de zelfde stad! Door contact te leggen op een gratis datingsite is de drempel voor een eerste berichtje veel lager. Daarom is Zoekertjes België ook zo een succes.</p>
+        <p>Van zoeken naar jouw droompartner of spannende afspraakjes, liefde en geluk ligt om de hoek. Vaak zijn leden verbaasd over hoe dichtbij hun nieuwe liefde eigenlijk woont! En dat ene café of restaurant waar je altijd langskwam, is binnenkort misschien wel de plek voor de eerste echte afspraakjes! En omdat iedereen eigen voorkeuren heeft, is het bij Zoekertjes België volledig aan de leden om zelf in vrijheid te bepalen waar en hoe het eerste afspraakje gaat plaatsvinden.</p>
+        <p><span>Je bent nooit meer alleen dus begin nu met gratis daten!</span></p>
+    </div>
+
+    <div class="jumbotron text-center">
+        <h2>Datingtips</h2>
+        <?php foreach ($datingtips as $tips => $item) { ?>
+        <a href="datingtips-<?php echo $tips; ?>" class="btn btn-primary btn-tips"><?php echo $item['name']; ?></a>
+        <?php } ?>
     </div>
     <div id="footer-banner"></div>
     <div class="jumbotron text-center">
@@ -111,6 +123,4 @@
         </div>
     </div>
 </div><!-- container -->
-<?php
-  	include('includes/footer.php');
-?>
+<?php include('includes/footer.php'); ?>

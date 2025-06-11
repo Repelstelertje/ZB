@@ -1,11 +1,11 @@
 <?php
-    define('TITLE', 'Cookiebeleid');
-    include('includes/header.php');
+define('TITLE', 'Cookiebeleid');
+include('includes/header.php');
 ?>
 <div class="container">
   <div class="jumbotron my-4">
-    <h1>Cookiebeleid – zoekertjesbelgie.be</h1>
-    <p>Deze website, zoekertjesbelgie.be, maakt gebruik van cookies. In dit beleid leggen we uit wat cookies zijn, welke cookies we gebruiken en hoe je jouw voorkeuren kunt beheren.</p>
+    <h1>Cookiebeleid – Zoekertjesbelgie.be</h1>
+    <p>Deze website, Zoekertjesbelgie.be, maakt gebruik van cookies. In dit beleid leggen we uit wat cookies zijn, welke cookies we gebruiken en hoe je jouw voorkeuren kunt beheren.</p>
     <h2>Wat zijn cookies?</h2>
     <p>Cookies zijn kleine tekstbestanden die op je computer of mobiel apparaat worden opgeslagen wanneer je een website bezoekt. Ze zorgen ervoor dat de website goed functioneert, helpen ons om inzicht te krijgen in hoe bezoekers de site gebruiken, en maken het mogelijk om advertenties relevanter te maken.</p>
     <h2>Welke cookies gebruiken wij?</h2>

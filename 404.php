@@ -5,7 +5,7 @@
 
 <div class="container">
 	<div class="jumbotron my-4">
-    	<div class="text-center" style="min-height: 425px;">
+    	<div class="text-center" style="min-height: 400px;">
        		<h1>Oeps!</h1>
        		<h2>Helaas is de opgevraagde pagina niet gevonden.</h2>
           	<p>	Redenen hiervoor kunnen zijn:<br />1. Het profiel dat je probeert te benaderen bestaat niet meer.<br />2. Het webadres is niet correct ingevoerd.<br /><br />Gebruik het menu op deze pagina om een nieuwe keuze te maken.</p>

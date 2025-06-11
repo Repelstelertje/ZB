@@ -27,33 +27,25 @@
   </div>
 </div>
 </div> <!-- /.oproepjes -->
-
 <script src="js/vendor/vue.2.5.13.min.js"></script>
 <script src="js/vendor/axios.0.17.1.min.js"></script>
-
 <script src="js/vendor/jquery.min.js"></script>
 <script src="js/vendor/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/vue-router@3.5.3"></script>
 <script src="js/cookie-consent.js"></script>
-
-<script type="text/javascript"   nonce="2726c7f26c" SameSite=None; Secure>
   ////Random IMG
+<script type="text/javascript">
   var topper = ['1.gif', '2.gif', '3.gif', '4.gif', '5.gif', '6.gif', '7.gif', '8.gif', '9.gif', '10.gif'];
   $('<a href="https://testars-consin.icu/543064f4-6080-4845-8f43-30f049426cdf?site={ZB}"><img class="align-center" src="img/banners/' + topper[Math.floor(Math.random() * topper.length)] + '" alt="Spannende plekken om contact te maken"></a>').appendTo('#top-banner');
   var footer = ['1.gif', '2.gif', '3.gif', '4.gif', '5.gif', '6.gif', '7.gif', '8.gif', '9.gif', '10.gif'];
   $('<a href="https://testars-consin.icu/543064f4-6080-4845-8f43-30f049426cdf?site={ZB}"><img class="align-center" src="img/banners/' + footer[Math.floor(Math.random() * footer.length)] + '" alt="Spannende plekken om contact te maken"></a>').appendTo('#footer-banner');
 </script>
-
 <?php 
   if(isset ($type) && $type == "profile"){
-
     echo '<script src="js/profile.js"></script>';
   } else {
-
     echo '<script src="js/oproepjes.js"></script>';
   }
 ?>
-
 </body>
-
 </html>
