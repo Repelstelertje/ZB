@@ -19,19 +19,35 @@ var oproepjes= new Vue({
         max_page_number: function(){
             return Math.ceil(this.profiles.length / this.ppp);  
         },
-        profile: function(){
-        	return this.profiles[0];
-        }
     },
     methods:  {
         init: function(){
             axios.get(api_url)
                 .then(function(response){
-                    oproepjes.profiles= response.data.profiles;
+                    var profs = response.data.profiles;
+                    profs.forEach(function(p){
+                        if(p.src && p.src.indexOf('no_img_Vrouw.jpg') !== -1){
+                            p.src = 'img/fallback.svg';
+                        }
+                        if(p.profile_image_big && p.profile_image_big.indexOf('no_img_Vrouw.jpg') !== -1){
+                            p.profile_image_big = 'img/fallback.svg';
+                        }
+                    });
+                    oproepjes.profiles = profs;
                 })
                 .catch(function (error) {
                     console.log(error);
-                });            
+                });
+        },
+        imgError: function(event){
+            event.target.src = 'img/fallback.svg';
+        },
+        slugify: function(text){
+            return text.toString().toLowerCase()
+                .replace(/\s+/g,'-')
+                .replace(/[^a-z0-9-]/g,'')
+                .replace(/--+/g,'-')
+                .replace(/^-+|-+$/g,'');
         },
         set_page_number: function(page){
             if(page <= 1){
@@ -46,11 +62,3 @@ var oproepjes= new Vue({
         }
     }
 });
-
-
-//Rechtermuis knop onmogelijk maken afbeeldingen
-$(document).ready(function() {
-     $("img").on("contextmenu",function(){
-        return false;
-     }); 
- });
