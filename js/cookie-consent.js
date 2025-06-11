@@ -11,7 +11,7 @@ function setCookieConsent(statistics, marketing) {
 function getCookieConsent() {
   try {
     return JSON.parse(localStorage.getItem('cookieConsent'));
-  } catch {
+  } catch (e) {
     return null;
   }
 }
@@ -55,18 +55,21 @@ function initializeCookies() {
   }
 }
 
-document.getElementById('cookie-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const statistics = document.getElementById('cookie-statistics').checked;
-  const marketing = document.getElementById('cookie-marketing').checked;
-  setCookieConsent(statistics, marketing);
-  document.getElementById('cookie-banner').style.display = 'none';
-  if (statistics) loadAnalytics();
-  if (marketing) loadMarketing();
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('cookie-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const statistics = document.getElementById('cookie-statistics').checked;
+    const marketing = document.getElementById('cookie-marketing').checked;
+    setCookieConsent(statistics, marketing);
+    document.getElementById('cookie-banner').style.display = 'none';
+    if (statistics) loadAnalytics();
+    if (marketing) loadMarketing();
+  });
+
+  document.getElementById('accept-all-cookies').addEventListener('click', acceptAllCookies);
+
+  initializeCookies();
 });
-
-document.getElementById('accept-all-cookies').addEventListener('click', acceptAllCookies);
-
 function acceptAllCookies() {
   document.getElementById('cookie-statistics').checked = true;
   document.getElementById('cookie-marketing').checked = true;
@@ -75,5 +78,3 @@ function acceptAllCookies() {
   loadAnalytics();
   loadMarketing();
 }
-
-window.onload = initializeCookies;
