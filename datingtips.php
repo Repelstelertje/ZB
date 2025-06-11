@@ -5,10 +5,7 @@
   	include('includes/array_prov.php');
 	include('includes/header.php');
 
-	function strip_bad_chars( $input ) {
-		$output = preg_replace( "/[^a-zA-Z0-9_-]/", "",$input);
-		return $output;
-	}
+        include('includes/utils.php');
 	
 	if(isset($_GET['tip'])) {
 		$datingtip = strip_bad_chars( $_GET['tip'] );
