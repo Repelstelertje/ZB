@@ -11,26 +11,28 @@ function setCookieConsent(statistics, marketing) {
 function getCookieConsent() {
   try {
     return JSON.parse(localStorage.getItem('cookieConsent'));
-  } catch (err) {
+  } catch {
     return null;
   }
 }
 
 function loadAnalytics() {
+  // Google Analytics
   const script = document.createElement('script');
-  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-5M538168N4';
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-ZGF9E4WFZD";
   script.async = true;
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-5M538168N4');
+  gtag('config', 'G-ZGF9E4WFZD');
 }
 
 function loadMarketing() {
+  // Google Ads Example (conversion tracking)
   const script = document.createElement('script');
-  script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-7880643696';
+  script.src = "https://www.googletagmanager.com/gtag/js?id=AW-7880643696";
   script.async = true;
   document.head.appendChild(script);
 
@@ -53,24 +55,15 @@ function initializeCookies() {
   }
 }
 
-function bindCookieForm() {
-  const form = document.getElementById('cookie-form');
-  if (!form) return;
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const statistics = document.getElementById('cookie-statistics').checked;
-    const marketing = document.getElementById('cookie-marketing').checked;
-    setCookieConsent(statistics, marketing);
-    document.getElementById('cookie-banner').style.display = 'none';
-    if (statistics) loadAnalytics();
-    if (marketing) loadMarketing();
-  });
-
-  const acceptAllBtn = document.getElementById('cookie-accept-all');
-  if (acceptAllBtn) {
-    acceptAllBtn.addEventListener('click', acceptAllCookies);
-  }
-}
+document.getElementById('cookie-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const statistics = document.getElementById('cookie-statistics').checked;
+  const marketing = document.getElementById('cookie-marketing').checked;
+  setCookieConsent(statistics, marketing);
+  document.getElementById('cookie-banner').style.display = 'none';
+  if (statistics) loadAnalytics();
+  if (marketing) loadMarketing();
+});
 
 function acceptAllCookies() {
   document.getElementById('cookie-statistics').checked = true;
@@ -81,12 +74,4 @@ function acceptAllCookies() {
   loadMarketing();
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', function() {
-    initializeCookies();
-    bindCookieForm();
-  });
-} else {
-  initializeCookies();
-  bindCookieForm();
-}
+window.onload = initializeCookies;
