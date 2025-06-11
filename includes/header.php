@@ -72,78 +72,93 @@
         // Dynamisch genereren van inhoud gebaseerd op de pagina-URL
         $current_url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-        // specifieke pagina's
-        if (strpos($current_url, 'dating-antwerpen') !== false) {
-            $og_title = "Dating in Antwerpen - Vind je Match op Zoekertjes België";
-            $og_description = "Op zoek naar een date in Antwerpen? Plaats je oproepje of reageer op anderen via Zoekertjes België.";
-            $og_image = "https://zoekertjesbelgie.be/img/belgie/antwerpen.jpg";
-            $og_url = $current_url;
-        } elseif (strpos($current_url, 'dating-brussel') !== false) {
-            $og_title = "Dating in Brussel - Ontmoet Singles via Zoekertjes België";
-            $og_description = "Vind singles in Brussel en plaats je datingoproep eenvoudig via Zoekertjes België.";
-            $og_image = "https://zoekertjesbelgie.be/img/belgie/brussel.jpg";
-            $og_url = $current_url;
-        } elseif (strpos($current_url, 'dating-henegouwen') !== false) {
-            $og_title = "Dating in Henegouwen - Vind Je Date op Zoekertjes België";
-            $og_description = "Zoek of plaats een datingoproep in Henegouwen. Ontmoet nieuwe mensen via Zoekertjes België.";
-            $og_image = "https://zoekertjesbelgie.be/img/belgie/henegouwen.jpg";
-            $og_url = $current_url;
-        } elseif (strpos($current_url, 'dating-limburg') !== false) {
-            $og_title = "Dating in Limburg - Ontmoet Singles via Zoekertjes België";
-            $og_description = "Plaats of bekijk datingoproepjes in Limburg op Zoekertjes België en ontmoet nieuwe mensen.";
-            $og_image = "https://zoekertjesbelgie.be/img/belgie/limburg.jpg";
-            $og_url = $current_url;
-        } elseif (strpos($current_url, 'dating-luik') !== false) {
-            $og_title = "Dating in Luik - Vind je Match op Zoekertjes België";
-            $og_description = "Ontmoet singles in Luik en plaats je oproepje eenvoudig op Zoekertjes België.";
-            $og_image = "https://zoekertjesbelgie.be/img/belgie/luik.jpg";
-            $og_url = $current_url;
-        } elseif (strpos($current_url, 'dating-luxemburg') !== false) {
-            $og_title = "Dating in Luxemburg - Vind Singles via Zoekertjes België";
-            $og_description = "Zoek of plaats een datingoproep in Luxemburg via Zoekertjes België en ontmoet nieuwe mensen.";
-            $og_image = "https://zoekertjesbelgie.be/img/belgie/luxemburg.jpg";
-            $og_url = $current_url;
-        } elseif (strpos($current_url, 'dating-namen') !== false) {
-            $og_title = "Dating in Namen - Ontmoet Singles via Zoekertjes België";
-            $og_description = "Vind of plaats een datingoproep in Namen op Zoekertjes België en vergroot je kansen op een geslaagde date.";
-            $og_image = "https://zoekertjesbelgie.be/img/belgie/namen.jpg";
-            $og_url = $current_url;
-        } elseif (strpos($current_url, 'dating-oost-vlaanderen') !== false) {
-            $og_title = "Dating in Oost-Vlaanderen - Vind je Date op Zoekertjes België";
-            $og_description = "Ontmoet singles in Oost-Vlaanderen en plaats eenvoudig je oproepje via Zoekertjes België.";
-            $og_image = "https://zoekertjesbelgie.be/img/belgie/oostvlaanderen.jpg";
-            $og_url = $current_url;
-        } elseif (strpos($current_url, 'dating-vlaams-brabant') !== false) {
-            $og_title = "Dating in Vlaams-Brabant - Vind Singles via Zoekertjes België";
-            $og_description = "Zoek of plaats een datingoproep in Vlaams-Brabant op Zoekertjes België en ontmoet nieuwe mensen.";
-            $og_image = "https://zoekertjesbelgie.be/img/belgie/vlaamsbrabant.jpg";
-            $og_url = $current_url;
-        } elseif (strpos($current_url, 'dating-waals-brabant') !== false) {
-            $og_title = "Dating in Waals-Brabant - Vind je Match op Zoekertjes België";
-            $og_description = "Ontmoet singles in Waals-Brabant en plaats je datingoproep via Zoekertjes België.";
-            $og_image = "https://zoekertjesbelgie.be/img//belgie/waalsbrabant.jpg";
-            $og_url = $current_url;                                    
-        } elseif (strpos($current_url, 'dating-west-vlaanderen') !== false) {
-            $og_title = "Dating in West-Vlaanderen - Ontmoet Nieuwe Mensen via Zoekertjes België";
-            $og_description = "Plaats of bekijk datingoproepjes in West-Vlaanderen via Zoekertjes België en vind je date.";
-            $og_image = "https://zoekertjesbelgie.be/img/belgie/westvlaanderen.jpg";
-            $og_url = $current_url;    
-        } elseif (strpos($current_url, 'datingtips-stout-contact') !== false) {
-            $og_title = "Datingtips Stout Contact";
-            $og_description = "Ontdek de Opwinding van Stout Contact: Alles Wat Je Moet Weten Over Sensueel Verbinden";
-            $og_image = "https://zoekertjesbelgie.be/img/datingtips/stoutcontact.jpg";
-            $og_url = $current_url;    
-        } elseif (strpos($current_url, 'datingtips-gratis-dating') !== false) {
-            $og_title = "Datingtips Gratis Dating";
-            $og_description = "De Ultieme Gids voor Gratis Dating: Vind de Liefde zonder de Portemonnee te Trekken";
-            $og_image = "https://zoekertjesbelgie.be/img/datingtips/datingtips1.jpg";
-            $og_url = $current_url;    
-        } elseif (strpos($current_url, 'datingtips-gegarandeerd-een-date') !== false) {
-            $og_title = "Datingtips Gegarandeed een date";
-            $og_description = "Datingtips - In 3 stappen gegarandeerd een date!";
-            $og_image = "https://zoekertjesbelgie.be/img/datingtips/datingtips2.jpg";
-            $og_url = $current_url;    
-        } else {
+        // Mapping van URL-sleutels naar Open Graph gegevens
+        $og_mappings = [
+            'dating-antwerpen' => [
+                'title' => 'Dating in Antwerpen - Vind je Match op Zoekertjes België',
+                'description' => 'Op zoek naar een date in Antwerpen? Plaats je oproepje of reageer op anderen via Zoekertjes België.',
+                'image' => 'https://zoekertjesbelgie.be/img/belgie/antwerpen.jpg'
+            ],
+            'dating-brussel' => [
+                'title' => 'Dating in Brussel - Ontmoet Singles via Zoekertjes België',
+                'description' => 'Vind singles in Brussel en plaats je datingoproep eenvoudig via Zoekertjes België.',
+                'image' => 'https://zoekertjesbelgie.be/img/belgie/brussel.jpg'
+            ],
+            'dating-henegouwen' => [
+                'title' => 'Dating in Henegouwen - Vind Je Date op Zoekertjes België',
+                'description' => 'Zoek of plaats een datingoproep in Henegouwen. Ontmoet nieuwe mensen via Zoekertjes België.',
+                'image' => 'https://zoekertjesbelgie.be/img/belgie/henegouwen.jpg'
+            ],
+            'dating-limburg' => [
+                'title' => 'Dating in Limburg - Ontmoet Singles via Zoekertjes België',
+                'description' => 'Plaats of bekijk datingoproepjes in Limburg op Zoekertjes België en ontmoet nieuwe mensen.',
+                'image' => 'https://zoekertjesbelgie.be/img/belgie/limburg.jpg'
+            ],
+            'dating-luik' => [
+                'title' => 'Dating in Luik - Vind je Match op Zoekertjes België',
+                'description' => 'Ontmoet singles in Luik en plaats je oproepje eenvoudig op Zoekertjes België.',
+                'image' => 'https://zoekertjesbelgie.be/img/belgie/luik.jpg'
+            ],
+            'dating-luxemburg' => [
+                'title' => 'Dating in Luxemburg - Vind Singles via Zoekertjes België',
+                'description' => 'Zoek of plaats een datingoproep in Luxemburg via Zoekertjes België en ontmoet nieuwe mensen.',
+                'image' => 'https://zoekertjesbelgie.be/img/belgie/luxemburg.jpg'
+            ],
+            'dating-namen' => [
+                'title' => 'Dating in Namen - Ontmoet Singles via Zoekertjes België',
+                'description' => 'Vind of plaats een datingoproep in Namen op Zoekertjes België en vergroot je kansen op een geslaagde date.',
+                'image' => 'https://zoekertjesbelgie.be/img/belgie/namen.jpg'
+            ],
+            'dating-oost-vlaanderen' => [
+                'title' => 'Dating in Oost-Vlaanderen - Vind je Date op Zoekertjes België',
+                'description' => 'Ontmoet singles in Oost-Vlaanderen en plaats eenvoudig je oproepje via Zoekertjes België.',
+                'image' => 'https://zoekertjesbelgie.be/img/belgie/oostvlaanderen.jpg'
+            ],
+            'dating-vlaams-brabant' => [
+                'title' => 'Dating in Vlaams-Brabant - Vind Singles via Zoekertjes België',
+                'description' => 'Zoek of plaats een datingoproep in Vlaams-Brabant op Zoekertjes België en ontmoet nieuwe mensen.',
+                'image' => 'https://zoekertjesbelgie.be/img/belgie/vlaamsbrabant.jpg'
+            ],
+            'dating-waals-brabant' => [
+                'title' => 'Dating in Waals-Brabant - Vind je Match op Zoekertjes België',
+                'description' => 'Ontmoet singles in Waals-Brabant en plaats je datingoproep via Zoekertjes België.',
+                'image' => 'https://zoekertjesbelgie.be/img//belgie/waalsbrabant.jpg'
+            ],
+            'dating-west-vlaanderen' => [
+                'title' => 'Dating in West-Vlaanderen - Ontmoet Nieuwe Mensen via Zoekertjes België',
+                'description' => 'Plaats of bekijk datingoproepjes in West-Vlaanderen via Zoekertjes België en vind je date.',
+                'image' => 'https://zoekertjesbelgie.be/img/belgie/westvlaanderen.jpg'
+            ],
+            'datingtips-stout-contact' => [
+                'title' => 'Datingtips Stout Contact',
+                'description' => 'Ontdek de Opwinding van Stout Contact: Alles Wat Je Moet Weten Over Sensueel Verbinden',
+                'image' => 'https://zoekertjesbelgie.be/img/datingtips/stoutcontact.jpg'
+            ],
+            'datingtips-gratis-dating' => [
+                'title' => 'Datingtips Gratis Dating',
+                'description' => 'De Ultieme Gids voor Gratis Dating: Vind de Liefde zonder de Portemonnee te Trekken',
+                'image' => 'https://zoekertjesbelgie.be/img/datingtips/datingtips1.jpg'
+            ],
+            'datingtips-gegarandeerd-een-date' => [
+                'title' => 'Datingtips Gegarandeed een date',
+                'description' => 'Datingtips - In 3 stappen gegarandeerd een date!',
+                'image' => 'https://zoekertjesbelgie.be/img/datingtips/datingtips2.jpg'
+            ]
+        ];
+
+        $found = false;
+        foreach ($og_mappings as $keyword => $data) {
+            if (strpos($current_url, $keyword) !== false) {
+                $og_title = $data['title'];
+                $og_description = $data['description'];
+                $og_image = $data['image'];
+                $og_url = $current_url;
+                $found = true;
+                break;
+            }
+        }
+
+        if (!$found) {
             // Standaardwaarden als de pagina geen specifieke inhoud heeft
             $og_title = $default_title;
             $og_description = $default_description;
