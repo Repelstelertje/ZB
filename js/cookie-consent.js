@@ -65,6 +65,8 @@ document.getElementById('cookie-form').addEventListener('submit', function(e) {
   if (marketing) loadMarketing();
 });
 
+document.getElementById('accept-all-cookies').addEventListener('click', acceptAllCookies);
+
 function acceptAllCookies() {
   document.getElementById('cookie-statistics').checked = true;
   document.getElementById('cookie-marketing').checked = true;
