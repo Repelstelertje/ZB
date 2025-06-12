@@ -11,15 +11,14 @@ function setCookieConsent(statistics, marketing) {
 function getCookieConsent() {
   try {
     return JSON.parse(localStorage.getItem('cookieConsent'));
-  } catch (e) {
+  } catch (err) {
     return null;
   }
 }
-
 function loadAnalytics() {
   // Google Analytics
   const script = document.createElement('script');
-  script.src = "https://www.googletagmanager.com/gtag/js?id=G-ZGF9E4WFZD";
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZGF9E4WFZD';
   script.async = true;
   document.head.appendChild(script);
 
@@ -32,7 +31,7 @@ function loadAnalytics() {
 function loadMarketing() {
   // Google Ads Example (conversion tracking)
   const script = document.createElement('script');
-  script.src = "https://www.googletagmanager.com/gtag/js?id=AW-7880643696";
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-7880643696';
   script.async = true;
   document.head.appendChild(script);
 
@@ -44,7 +43,6 @@ function loadMarketing() {
   // Facebook Pixel (placeholder)
   // Insert your pixel script here if needed
 }
-
 function initializeCookies() {
   const consent = getCookieConsent();
   if (!consent) {
@@ -54,9 +52,10 @@ function initializeCookies() {
     if (consent.marketing) loadMarketing();
   }
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('cookie-form').addEventListener('submit', function(e) {
+function bindCookieForm() {
+  const form = document.getElementById('cookie-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
     const statistics = document.getElementById('cookie-statistics').checked;
     const marketing = document.getElementById('cookie-marketing').checked;
@@ -66,10 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (marketing) loadMarketing();
   });
 
-  document.getElementById('accept-all-cookies').addEventListener('click', acceptAllCookies);
-
-  initializeCookies();
-});
+  const acceptAllBtn = document.getElementById('cookie-accept-all');
+  if (acceptAllBtn) {
+    acceptAllBtn.addEventListener('click', acceptAllCookies);
+  }
+}
 function acceptAllCookies() {
   document.getElementById('cookie-statistics').checked = true;
   document.getElementById('cookie-marketing').checked = true;
@@ -77,4 +77,13 @@ function acceptAllCookies() {
   document.getElementById('cookie-banner').style.display = 'none';
   loadAnalytics();
   loadMarketing();
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function() {
+    initializeCookies();
+    bindCookieForm();
+  });
+} else {
+  initializeCookies();
+  bindCookieForm();
 }
