@@ -27,7 +27,6 @@ function loadAnalytics() {
   gtag('js', new Date());
   gtag('config', 'G-ZGF9E4WFZD');
 }
-
 function loadMarketing() {
   // Google Ads Example (conversion tracking)
   const script = document.createElement('script');

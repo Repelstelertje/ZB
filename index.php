@@ -80,7 +80,6 @@
         <p>Van zoeken naar jouw droompartner of spannende afspraakjes, liefde en geluk ligt om de hoek. Vaak zijn leden verbaasd over hoe dichtbij hun nieuwe liefde eigenlijk woont! En dat ene café of restaurant waar je altijd langskwam, is binnenkort misschien wel de plek voor de eerste echte afspraakjes! En omdat iedereen eigen voorkeuren heeft, is het bij Zoekertjes België volledig aan de leden om zelf in vrijheid te bepalen waar en hoe het eerste afspraakje gaat plaatsvinden.</p>
         <p><span>Je bent nooit meer alleen dus begin nu met gratis daten!</span></p>
     </div>
-
     <div class="jumbotron text-center">
         <h2>Datingtips</h2>
         <?php foreach ($datingtips as $tips => $item) { ?>

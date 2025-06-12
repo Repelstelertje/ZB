@@ -39,19 +39,13 @@
   <nav class="nav-pag" aria-label="Page navigation">
     <ul class="pagination flex-wrap justify-content-center">
       <li class="page-item">
-        <a class="page-link" aria-label="Vorige" v-on:click="set_page_number(page-1)">
-          <span aria-hidden="true">&laquo;</span>
-          <span class="sr-only">Vorige</span>
-        </a>
+        <a class="page-link" aria-label="Vorige" v-on:click="set_page_number(page-1)"><span aria-hidden="true">&laquo;</span><span class="sr-only">Vorige</span></a>
       </li>
       <li v-for="page_number in max_page_number" class="page-item" v-bind:class="{ active: page_number == page }">
         <a class="page-link" v-on:click="set_page_number(page_number)">{{ page_number }}</a>
       </li>
       <li class="page-item">
-        <a class="page-link" aria-label="Volgende" v-on:click="set_page_number(page+1)">
-          <span aria-hidden="true">&raquo;</span>
-          <span class="sr-only">Volgende</span>
-        </a>
+        <a class="page-link" aria-label="Volgende" v-on:click="set_page_number(page+1)"><span aria-hidden="true">&raquo;</span><span class="sr-only">Volgende</span></a>
       </li>
     </ul>
   </nav>
@@ -60,7 +54,7 @@
     <?php echo $zoek['tekst']; ?>
   </div>
   <div class="jumbotron text-center">
-    <a href="https://18date.net/sexdates-<?php echo $zoek['img']; ?>" class="btn btn-primary btn-tips" target="_blank">18+ Sexdate <?php echo $zoek['name']; ?></a>
+    <a href="https://18date.net/sexdate-<?php echo $zoek['img']; ?>" class="btn btn-primary btn-tips" target="_blank">18+ Sexdate <?php echo $zoek['name']; ?></a>
     <a href="https://sex55.net/sexdate-<?php echo $zoek['img']; ?>" class="btn btn-primary btn-tips" target="_blank">55+ Sexdate <?php echo $zoek['name']; ?></a>
     <a href="https://shemaledaten.net/shemales-<?php echo $zoek['img']; ?>" class="btn btn-primary btn-tips" target="_blank">Shemale sexdate <?php echo $zoek['name']; ?></a>
   </div>
