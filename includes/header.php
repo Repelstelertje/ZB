@@ -67,6 +67,15 @@
             $canonicalUrl = $baseUrl . "/datingtips-" . htmlspecialchars($_GET['tip']);
             $title = "Datingtips " . htmlspecialchars($_GET['tip']);
         }
+
+        // When no query parameters are present, build canonical from script name
+        if (empty($_GET)) {
+            $script = basename($_SERVER['SCRIPT_NAME']);
+            if ($script !== 'index.php') {
+                $canonicalUrl = $baseUrl . '/' . $script;
+            }
+        }
+
         echo '<link rel="canonical" href="' . $canonicalUrl . '" >';
         echo '<title>' . $title . '</title>';
     ?>
