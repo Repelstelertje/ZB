@@ -91,7 +91,7 @@
         $og_title = $default_title;
         $og_description = $default_description;
         $og_image = $default_image;
-        $og_url = $default_url;
+        $og_url = $canonicalUrl;
         $og_pages = [
             'dating-antwerpen' => [
                 'title' => 'Dating in Antwerpen - Vind je Match op Zoekertjes België',
