@@ -82,7 +82,11 @@
     </div>
     <div class="jumbotron text-center">
         <h2>Datingtips</h2>
-        <?php foreach ($datingtips as $tips => $item) { ?>
+        <?php foreach ($datingtips as $tips => $item) {
+            if (empty($tips)) {
+                continue;
+            }
+        ?>
         <a href="datingtips-<?php echo $tips; ?>" class="btn btn-primary btn-tips"><?php echo $item['name']; ?></a>
         <?php } ?>
     </div>
