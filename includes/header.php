@@ -76,6 +76,11 @@
             }
         }
 
+        // Always append site name to the title when not already present
+        if (strpos($title, 'Zoekertjes België') === false) {
+            $title .= ' - Zoekertjes België';
+        }
+
         echo '<link rel="canonical" href="' . $canonicalUrl . '" >';
         echo '<title>' . $title . '</title>';
     ?>
