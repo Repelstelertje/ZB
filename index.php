@@ -31,7 +31,7 @@
     <div class="row" v-cloak>
         <div class="col-lg-3 col-md-6 mb-4 portfolio-item" id="Slankie" v-for="profile in filtered_profiles">
             <div class="card h-100">
-                <a :href="'daten-met-' + slugify(profile.name) + '?id=' + profile.id"><img class="card-img-top" :src="profile.src.replace('150x150', '300x300')" :alt="profile.name + ' daten in België'" @error="imgError"></a>
+                <a :href="'<?php echo $baseUrl; ?>/daten-met-' + slugify(profile.name) + '?id=' + profile.id"><img class="card-img-top" :src="profile.src.replace('150x150', '300x300')" :alt="profile.name + ' daten in België'" @error="imgError"></a>
                 <div class="card-body">
                     <div class="card-top">
                         <h4 class="card-title">{{ profile.name }}</h4>  
@@ -43,7 +43,7 @@
                         <li class="list-group-item">Provincie: {{ profile.province }}</li>
                     </ul>
                 </div>
-                <a :href="'daten-met-' + slugify(profile.name) + '?id=' + profile.id" class="card-footer btn btn-primary">Bekijk profiel</a>
+                <a :href="'<?php echo $baseUrl; ?>/daten-met-' + slugify(profile.name) + '?id=' + profile.id" class="card-footer btn btn-primary">Bekijk profiel</a>
             </div>
         </div>
         <script>
