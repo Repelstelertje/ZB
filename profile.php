@@ -1,6 +1,8 @@
 <?php
 $base = __DIR__;
 define("TITLE", "Daten");
+// Determine the referrer ID from the environment if provided
+$ref_id = getenv('REF_ID') ?: '';
 include $base . '/includes/header.php';
 ?>
 <!-- Page Content -->
