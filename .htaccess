@@ -7,8 +7,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.+)$ $1.php [QSA]
 
-RewriteRule ^dating-([0-9a-zA-Z-]+) provincie.php?item=$1 [NC,L]
-RewriteRule ^datingtips-([0-9a-zA-Z-]+) datingtips.php?tip=$1 [NC,L]
+RewriteRule ^dating-([a-z-]+)/?$ provincie.php?item=$1 [NC,L]
+RewriteRule ^datingtips-([a-z-]+)/?$ datingtips.php?item=$1 [NC,L]
 RewriteRule ^daten-met-[0-9a-zA-Z-]+$ profile.php [NC,L,QSA]
 
 ErrorDocument 404 https://zoekertjesbelgie.be/404.php

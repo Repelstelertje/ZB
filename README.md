@@ -39,6 +39,17 @@ Point your browser to [http://localhost:8000](http://localhost:8000) to view the
 
 `gulp watch` (used in `npm start`) serves the site via BrowserSync on port 3000. This is convenient for pure HTML/JS development but does not interpret PHP code.
 
+The webserver should rewrite friendly URLs to their PHP counterparts. The
+provided `.htaccess` maps requests of the form `dating-<slug>` to
+`provincie.php?item=<slug>` and `datingtips-<slug>` to
+`datingtips.php?item=<slug>`:
+
+```
+RewriteRule ^dating-([a-z-]+)/?$ provincie.php?item=$1 [NC,L]
+RewriteRule ^datingtips-([a-z-]+)/?$ datingtips.php?item=$1 [NC,L]
+```
+Ensure an equivalent rule exists if you use a different server.
+
 ## PHP and JavaScript
 
 The frontend uses Vue.js with Axios to fetch dating profiles from a remote API. The API base URL can be configured via the `BASE_API_URL` environment variable and defaults to `https://20fhbe2020.be`. Endpoints are defined in `includes/config.php` and included where needed so the strings aren't duplicated. The PHP files mainly generate the HTML structure (header, navigation and footer) and provide dynamic meta tags.
