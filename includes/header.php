@@ -2,7 +2,8 @@
   $companyName = "Zoekertjes België";
   include $base . '/includes/nav_items.php';
   // Config is required for API lookups when rendering profile pages
-  include_once $base . '/config.php';
+  // Capture the returned configuration array for later use
+  $config = include $base . '/config.php';
 
   /**
    * Convert a string to a URL friendly slug.
