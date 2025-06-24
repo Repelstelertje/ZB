@@ -6,12 +6,20 @@
 [v-cloak] {
   display: none;
 }
+html {
+  /* Offset scrolling to account for fixed header */
+  scroll-padding-top: 56px;
+}
 body {
   padding-top: 56px;
   background-image: linear-gradient(to right, #e21a4d, #fbe5eb, #e21a4d);
   position: relative;
   padding-bottom: 78px;
   min-height: 100vh;
+}
+
+main {
+  margin: 40px 0;
 }
 
 a {
@@ -42,7 +50,9 @@ hr {
 	border: none !important;
 	padding: .0rem 0rem;
 }
-
+.list-group-item:before {
+    font-weight: bold;
+}
 @media only screen and (max-width: 600px) {
   h1, h2 {
     font-size: 1.5rem;
@@ -103,6 +113,11 @@ hr {
 	padding: 0.25rem;
 	background-color: rgba(255, 255, 255, 0.8);
 }
+.jumbotron[id^="land-"],
+.country-section {
+        /* Prevent fixed header from covering anchors */
+        scroll-margin-top: 56px;
+}
 .align-center {
 	display: block;
 	margin: 0px auto;
@@ -128,6 +143,10 @@ hr {
 
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
 	background-color: #F7819F;
+}
+
+.button-area {
+	display: inline-flex;
 }
 
 .online {
@@ -161,6 +180,18 @@ hr {
 
 .portfolio-item {
 	margin: 10px 0px;
+}
+
+/* Center all pagination elements */
+.pagination {
+    justify-content: center;
+}
+
+/* Ensure the pagination nav stretches across the row */
+.nav-pag {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .page-item.active .page-link {
@@ -230,6 +261,12 @@ footer {
     color: #ffffff;
 }
 /* Social */
+
 .addthis_inline_follow_toolbox {
-	margin-top: -10px;
+    margin-top: -5px;
+}
+
+/* Alert shown when profile data fails to load */
+.alert.data-error {
+    text-align: center;
 }

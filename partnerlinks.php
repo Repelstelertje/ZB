@@ -1,113 +1,32 @@
 <?php
-    define('TITLE', 'Partnerlinks');
-    include('includes/header.php');
-
-    $partnerLinks = [
-        ['url' => 'https://18date.net/', 'label' => '18Date.net'],
-        ['url' => 'https://sex55.net/', 'label' => 'sex55.net'],
-        ['url' => 'https://oproepjesnederland.nl/', 'label' => 'Oproepjes Nederland'],
-        ['url' => 'https://flirthonk.nl', 'label' => 'Flirthonk.nl gratis dating'],
-        ['url' => 'http://www.adulttop50.nl', 'label' => 'Adult Top 50'],
-        ['url' => 'http://www.topadultsites.nl', 'label' => 'Top Adultsites.nl'],
-        ['url' => 'http://gratissex.boogolinks.nl', 'label' => 'gratissex'],
-        ['url' => 'http://dating.boogolinks.nl', 'label' => 'dating links'],
-        ['url' => 'http://casualdating.bestelinks.nl', 'label' => 'beste casualdating'],
-        ['url' => 'http://dating.bestelinks.nl', 'label' => 'dating'],
-        ['url' => 'http://dating-websites.links.nl', 'label' => 'dating-websites'],
-        ['url' => 'http://dating.links.nl', 'label' => 'dating'],
-        ['url' => 'http://sexdate.links.nl', 'label' => 'sexdate links'],
-        ['url' => 'http://dating.jouwbegin.nl', 'label' => 'dating'],
-        ['url' => 'http://date.jouwbegin.nl', 'label' => 'date begin'],
-        ['url' => 'http://gratis-datingsites.jouwpagina.nl', 'label' => 'gratis-datingsites'],
-        ['url' => 'http://date.jouwpagina.nl', 'label' => 'date pagina'],
-        ['url' => 'http://datingsites.jouwpagina.be', 'label' => 'datingsites'],
-        ['url' => 'http://dating.jouwpagina.be', 'label' => 'dating pagina be'],
-        ['url' => 'http://dating.uwpagina.nl', 'label' => 'dating'],
-        ['url' => 'http://date.uwpagina.nl', 'label' => 'date pagina'],
-        ['url' => 'http://dating.beginthier.nl', 'label' => 'dating'],
-        ['url' => 'http://daten.beginthier.nl', 'label' => 'daten begint hier'],
-        ['url' => 'http://dating.expertpagina.nl', 'label' => 'expert dating'],
-        ['url' => 'http://date.expertpagina.nl', 'label' => 'date'],
-        ['url' => 'http://sexdate.expertpagina.nl', 'label' => 'sexdate pagina'],
-        ['url' => 'http://dating.startbewijs.nl', 'label' => 'start dating'],
-        ['url' => 'http://sexdate.startbewijs.nl', 'label' => 'sexdate bewijs'],
-        ['url' => 'http://dating.startplezier.nl', 'label' => 'start dating'],
-        ['url' => 'http://date.startplezier.nl', 'label' => 'date'],
-        ['url' => 'http://sexdate.startplezier.nl', 'label' => 'sexdate plezier'],
-        ['url' => 'http://dating.b9.nl', 'label' => 'dating'],
-        ['url' => 'http://date.b9.nl', 'label' => 'date'],
-        ['url' => 'http://sexdate.b9.nl', 'label' => 'sexdate b9'],
-        ['url' => 'http://dating.startpagina.net', 'label' => 'start dating'],
-        ['url' => 'http://date.startpagina.net', 'label' => 'date'],
-        ['url' => 'http://sexdate.startpagina.net', 'label' => 'sexdate pagina'],
-        ['url' => 'http://dating.eigenstart.nl', 'label' => 'eigen dating'],
-        ['url' => 'http://date.eigenstart.nl', 'label' => 'date start'],
-        ['url' => 'http://dating.linkspot.nl', 'label' => 'dating link'],
-        ['url' => 'http://date.linkspot.nl', 'label' => 'date spot'],
-        ['url' => 'http://sexdate.linkspot.nl', 'label' => 'sexdate spot'],
-        ['url' => 'http://dating.allepaginas.nl', 'label' => 'alle dating'],
-        ['url' => 'http://date.allepaginas.nl', 'label' => 'date'],
-        ['url' => 'http://sexdate.allepaginas.nl', 'label' => 'sexdate paginas'],
-        ['url' => 'http://dating.linkexplorer.nl', 'label' => 'dating'],
-        ['url' => 'http://date.linkexplorer.nl', 'label' => 'date explorer'],
-        ['url' => 'http://sexdate.linkexplorer.nl', 'label' => 'sexdate explorer'],
-        ['url' => 'https://partnerzoeken.startpagina.nl/', 'label' => 'partnerzoeken'],
-        ['url' => 'https://dating.opzijnbest.nl/', 'label' => 'dating opzijnbest'],
-        ['url' => 'https://dating.sitelinkje.nl', 'label' => 'dating sitelinkje'],
-        ['url' => 'http://dating.start.be', 'label' => 'dating start'],
-        ['url' => 'http://date.start.be', 'label' => 'date'],
-        ['url' => 'http://sexdate.start.be', 'label' => 'sexdate belgië'],
-        ['url' => 'http://datingsites.favos.nl', 'label' => 'dating'],
-        ['url' => 'http://date.favos.nl', 'label' => 'date favos'],
-        ['url' => 'http://sexdate.favos.nl', 'label' => 'sexdate favos'],
-        ['url' => 'http://dating.vindjeviahier.nl', 'label' => 'dating'],
-        ['url' => 'http://date.vindjeviahier.nl', 'label' => 'date vind je via hier'],
-        ['url' => 'http://dating.eigenstart.be', 'label' => 'eigen dating'],
-        ['url' => 'http://date.eigenstart.be', 'label' => 'date start'],
-        ['url' => 'http://date.web-directory.be', 'label' => 'date directory'],
-        ['url' => 'http://datingtips.web-directory.be', 'label' => 'datingtips web'],
-        ['url' => 'http://dating.tipjes.nl', 'label' => 'dating'],
-        ['url' => 'http://date.tipjes.nl', 'label' => 'date'],
-        ['url' => 'http://sexdate.tipjes.nl', 'label' => 'sexdate tipjes'],
-        ['url' => 'http://dating.eigenoverzicht.nl', 'label' => 'eigen dating'],
-        ['url' => 'http://date.eigenoverzicht.nl', 'label' => 'date overzicht'],
-        ['url' => 'http://dating.webgidsje.nl', 'label' => 'dating'],
-        ['url' => 'http://date.webgidsje.nl', 'label' => 'date'],
-        ['url' => 'http://sexdate.webgidsje.nl', 'label' => 'sexdate webgidsje'],
-        ['url' => 'http://dating.linkjespagina.nl', 'label' => 'pagina dating'],
-        ['url' => 'http://date.linkjespagina.nl', 'label' => 'date'],
-        ['url' => 'http://sexdate.linkjespagina.nl', 'label' => 'sexdate linkjes'],
-        ['url' => 'http://dating.linkgoed.nl', 'label' => 'link dating'],
-        ['url' => 'http://date.linkgoed.nl', 'label' => 'date'],
-        ['url' => 'http://sexdate.linkgoed.nl', 'label' => 'sexdate goed'],
-        ['url' => 'http://dating.m4n.nl/', 'label' => ' dating'],
-        ['url' => 'http://date.m4n.nl/', 'label' => 'date m4n'],
-        ['url' => 'http://dating.zoekvinden.nl', 'label' => 'zoek dating'],
-        ['url' => 'http://date.zoekvinden.nl', 'label' => 'date'],
-        ['url' => 'http://sexdate.zoekvinden.nl', 'label' => 'sexdate vinden'],
-        ['url' => 'http://www.linkorado.com/', 'label' => 'Linkorado'],
-    ];
+$base = __DIR__;
+define('TITLE', 'Partnerlinks');
+$canonical = 'https://zoekertjesbelgie.be/partnerlinks';
+$pageTitle = 'Partnerlinks - Zoekertjes België';
+include $base . '/includes/header.php';
+include $base . '/includes/partner_links.php';
 ?>
 <div class="container">
     <div class="jumbotron my-4">
         <h1 class="text-center">Partnerlinks:</h1>
         <div class="row">
             <?php
-                $columns = array_chunk($partnerLinks, ceil(count($partnerLinks)/2));
-                foreach ($columns as $col) {
-                    echo "<div class=\"col-md-6 col-12\"><ul>";
-                    foreach ($col as $link) {
-                        echo "<li><a href=\"{$link['url']}\" target=\"_blank\" class=\"m-0\">{$link['label']}</a></li>";
-                    }
-                    echo "</ul></div>";
+            $chunks = array_chunk($partnerLinks, ceil(count($partnerLinks) / 2));
+            foreach ($chunks as $chunk) {
+                echo '<div class="col-md-6 col-12">';
+                echo '<ul>';
+                foreach ($chunk as $link) {
+                    $url = htmlspecialchars($link['url'], ENT_QUOTES, 'UTF-8');
+                    $label = htmlspecialchars($link['label'], ENT_QUOTES, 'UTF-8');
+                    echo "<li><a href=\"$url\" target=\"_blank\" class=\"m-0\">$label</a></li>";
                 }
+                echo '</ul>';
+                echo '</div>';
+            }
             ?>
-            <div class="col-md-6 col-12">
-                <ul>
-                    <a href="https://www.linkorado.com/">Linkorado</a><br />Linkorado is a link exchange directory where you can find websites related to your site and request link exchanges<br /><br />
-                </ul>
-            </div>
-        </div><!-- row -->
+        </div>
     </div>
-</div><!-- /.container -->
-<?php include('includes/footer.php'); ?>
+</div>
+<?php
+include $base . '/includes/footer.php';
+?>

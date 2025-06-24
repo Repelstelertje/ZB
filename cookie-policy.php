@@ -1,6 +1,9 @@
 <?php
+$base = __DIR__;
 define('TITLE', 'Cookiebeleid');
-include('includes/header.php');
+$canonical = 'https://18date.net/cookie-policy';
+$pageTitle = 'Cookiebeleid | ';
+include $base . '/includes/header.php';
 ?>
 <div class="container">
   <div class="jumbotron my-4">
@@ -26,4 +29,4 @@ include('includes/header.php');
     <p>Laatst bijgewerkt: juni 2025</p>
   </div>
 </div>
-<?php include('includes/footer.php'); ?>
+<?php include $base . '/includes/footer.php'; ?>

@@ -1,15 +1,7 @@
 <?php
-    $config = include('includes/config.php');
-    if (!empty($config['DEBUG'])) {
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
-    }
-    define("TITLE", "De beste datingsite van België");
-
-    include("includes/array_prov.php");
-    include("includes/array_tips.php");
-    include("includes/header.php");
+$base = __DIR__;
+define("TITLE", "Home");
+include $base . '/includes/header.php';
 ?>
 <div class="container">
     <!-- Jumbotron Header -->
@@ -90,40 +82,34 @@
         <a href="datingtips-<?php echo $tips; ?>" class="btn btn-primary btn-tips"><?php echo $item['name']; ?></a>
         <?php } ?>
     </div>
-    <div id="footer-banner"></div>
-    <div class="jumbotron text-center">
-        <div class="">
-            <a href="https://flirthonk.be" target="_blank" class="m-0" title="FlirtHonk.be - Ontdek Flirts & Contacten in België!">Flirthonk</a> - 
-            <a href="https://localflirt.be" target="_blank" class="m-0" title="LocalFlirt.be - Jouw Perfecte Flirt Dichtbij Huis in België!">LocalFlirt</a> -
-            <a href="https://65pluscontact.be" target="_blank" class="m-0" title="65PlusContact.be - 65+ Vriendschappen Vinden in België!">65Plus Contact</a> - 
-            <a href="https://belgenchat.be" target="_blank" class="m-0" title="BelgenChat.be - Chatten met Landgenoten in België!">Belgen Chat</a> - 
-            <a href="https://bechat.be" target="_blank" class="m-0" title="BeChat.be - Verbind met Belgen in Spannende Gesprekken">BEChat</a> - 
-            <a href="https://anoniemecontacten.be" target="_blank" class="m-0" title="AnoniemeContacten.be - Discreet Verbinden met Belgen">Anonieme Contacten</a> - 
-            <a href="https://casualflirten.be" target="_blank" class="m-0" title="CasualFlirten.be - Ontspannen flirten in heel België">Casual Flirten</a> - 
-            <a href="https://geheimegesprekken.be" target="_blank" class="m-0" title="GeheimeGesprekken.be - Vertrouwelijke Chats in België">Geheime Gesprekken</a>
-        </div>
-        <hr>
-        <div class="">
-            <a href="https://buurtmilfs.be" target="_blank" class="m-0" title="BuurtMilfs.be - Vind Milfs in Jouw Buurt voor Contact!">BuurtMilfs</a> - 
-            <a href="https://bd4xxx.be" target="_blank" class="m-0" title="BD4XXX.be - Ervaar Spanning en Sensualiteit in België!">BD4XXX</a> - 
-            <a href="https://sletplaats.be" target="_blank" class="m-0" title="Sletplaats.be - Contacten en Volwassen Plezier in België!">Sletplaats</a> - 
-            <a href="https://stout-contact.be" target="_blank" class="m-0" title="Stout-Contact.be - Stoute en Spannende Connecties in België!">Stout Contact</a> - 
-            <a href="https://oudevrouwenchat.be" target="_blank" class="m-0" title="OudeVrouwenChat.be - Chat met Rijpe Dames in België">Oude Vrouwen Chat</a> - 
-            <a href="https://rijpeomachat.be" target="_blank" class="m-0" title="RijpeOmaChat.be - Chat met Ervaren Dames in België">Rijpe Oma Chat</a> - 
-            <a href="https://rijpemilfchat.be" target="_blank" class="m-0" title="RijpeMilfChat.be - Chat met Ervaren Milfs in België">Rijpe Milf Chat</a> - 
-            <a href="https://rijpemilfmarkt.be" target="_blank" class="m-0" title="RijpeMilfMarkt.be - Markt voor Contact met Milfs in België">Rijpe Milf Markt</a> - 
-            <a href="https://milfmarkt.be" target="_blank" class="m-0" title="MilfMarkt.be - Contactmarkt voor Geile Milfs in België">Milf Markt</a> - 
-            <a href="https://hetebuurvrouwen.be" target="_blank" class="m-0" title="HeteBuurVrouwen.be - Chat met Hete Buurvrouwen in België">Hete Buurvrouwen</a> - 
-            <a href="https://slettenchat.be" target="_blank" class="m-0" title="SlettenChat.be - Chatten met Geile Sletten in België">Sletten Chat</a> - 
-            <a href="https://kinkycontacten.be" target="_blank" class="m-0" title="KinkyContacten.be - Ontdek Kinky Contacten in België">Kinky Contacten</a>    
-        </div>  
-        <hr>
-        <div class="">
-            <a href="https://transgrinder.be" target="_blank" class="m-0" title="TransGrinder.be - Trans Contacten Vinden in België!">Transgrinder</a> - 
-            <a href="https://trannyzoekt.com" target="_blank" class="m-0" title="TrannyZoekt.com - Shemales Zoeken Contact in België!">Tranny Zoekt</a> - 
-            <a href="https://shemalemarkt.com" target="_blank" class="m-0" title="ShemaleMarkt.com - Markt voor Shemale Contacten in België!">Shemale Markt</a> - 
-            <a href="https://trannycontacten.com" target="_blank" class="m-0" title="Trannycontacten.com - Shemale Contacten Ontdekken in België!">Tranny Contacten</a>
-        </div>
-    </div>
+<div id="footer-banner"></div>
+<div class="jumbotron text-center">
+    <a href="https://flirthonk.be" target="_blank" class="m-0" title="FlirtHonk.be - Ontdek Flirts & Contacten in België!">Flirthonk</a> - 
+    <a href="https://localflirt.be" target="_blank" class="m-0" title="LocalFlirt.be - Jouw Perfecte Flirt Dichtbij Huis in België!">LocalFlirt</a> -
+    <a href="https://65pluscontact.be" target="_blank" class="m-0" title="65PlusContact.be - 65+ Vriendschappen Vinden in België!">65Plus Contact</a> - 
+    <a href="https://belgenchat.be" target="_blank" class="m-0" title="BelgenChat.be - Chatten met Landgenoten in België!">Belgen Chat</a> - 
+    <a href="https://bechat.be" target="_blank" class="m-0" title="BeChat.be - Verbind met Belgen in Spannende Gesprekken">BEChat</a> - 
+    <a href="https://anoniemecontacten.be" target="_blank" class="m-0" title="AnoniemeContacten.be - Discreet Verbinden met Belgen">Anonieme Contacten</a> - 
+    <a href="https://casualflirten.be" target="_blank" class="m-0" title="CasualFlirten.be - Ontspannen flirten in heel België">Casual Flirten</a> - 
+    <a href="https://geheimegesprekken.be" target="_blank" class="m-0" title="GeheimeGesprekken.be - Vertrouwelijke Chats in België">Geheime Gesprekken</a>
+    <hr>
+    <a href="https://buurtmilfs.be" target="_blank" class="m-0" title="BuurtMilfs.be - Vind Milfs in Jouw Buurt voor Contact!">BuurtMilfs</a> - 
+    <a href="https://bd4xxx.be" target="_blank" class="m-0" title="BD4XXX.be - Ervaar Spanning en Sensualiteit in België!">BD4XXX</a> - 
+    <a href="https://sletplaats.be" target="_blank" class="m-0" title="Sletplaats.be - Contacten en Volwassen Plezier in België!">Sletplaats</a> - 
+    <a href="https://stout-contact.be" target="_blank" class="m-0" title="Stout-Contact.be - Stoute en Spannende Connecties in België!">Stout Contact</a> - 
+    <a href="https://oudevrouwenchat.be" target="_blank" class="m-0" title="OudeVrouwenChat.be - Chat met Rijpe Dames in België">Oude Vrouwen Chat</a> - 
+    <a href="https://rijpeomachat.be" target="_blank" class="m-0" title="RijpeOmaChat.be - Chat met Ervaren Dames in België">Rijpe Oma Chat</a> - 
+    <a href="https://rijpemilfchat.be" target="_blank" class="m-0" title="RijpeMilfChat.be - Chat met Ervaren Milfs in België">Rijpe Milf Chat</a> - 
+    <a href="https://rijpemilfmarkt.be" target="_blank" class="m-0" title="RijpeMilfMarkt.be - Markt voor Contact met Milfs in België">Rijpe Milf Markt</a> - 
+    <a href="https://milfmarkt.be" target="_blank" class="m-0" title="MilfMarkt.be - Contactmarkt voor Geile Milfs in België">Milf Markt</a> - 
+    <a href="https://hetebuurvrouwen.be" target="_blank" class="m-0" title="HeteBuurVrouwen.be - Chat met Hete Buurvrouwen in België">Hete Buurvrouwen</a> - 
+    <a href="https://slettenchat.be" target="_blank" class="m-0" title="SlettenChat.be - Chatten met Geile Sletten in België">Sletten Chat</a> - 
+    <a href="https://kinkycontacten.be" target="_blank" class="m-0" title="KinkyContacten.be - Ontdek Kinky Contacten in België">Kinky Contacten</a>    
+    <hr>
+    <a href="https://transgrinder.be" target="_blank" class="m-0" title="TransGrinder.be - Trans Contacten Vinden in België!">Transgrinder</a> - 
+    <a href="https://trannyzoekt.com" target="_blank" class="m-0" title="TrannyZoekt.com - Shemales Zoeken Contact in België!">Tranny Zoekt</a> - 
+    <a href="https://shemalemarkt.com" target="_blank" class="m-0" title="ShemaleMarkt.com - Markt voor Shemale Contacten in België!">Shemale Markt</a> - 
+    <a href="https://trannycontacten.com" target="_blank" class="m-0" title="Trannycontacten.com - Shemale Contacten Ontdekken in België!">Tranny Contacten</a>
+</div>
 </div><!-- container -->
-<?php include('includes/footer.php'); ?>
+<?php include $base . '/includes/footer.php'; ?>
