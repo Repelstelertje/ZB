@@ -45,6 +45,8 @@ The frontend uses Vue.js with Axios to fetch dating profiles from a remote API. 
 
 PHP error display is disabled by default. Set the `APP_DEBUG` environment variable to `true` when developing to enable verbose error output.
 
+The optional `REF_ID` environment variable can be used to append a referral identifier to profile links on the profile page.
+
 ## License and attribution
 
 This project is released under the MIT License. The layout originates from the [Start Bootstrap Heroic Features](https://github.com/BlackrockDigital/startbootstrap-heroic-features) template.
