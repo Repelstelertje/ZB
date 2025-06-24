@@ -45,7 +45,7 @@
     </div>
   </div><!-- /.row -->
   <script>
-    var api_url= "<?php echo $config['PROVINCE_ENDPOINT'] . '/' . $zoek['name'] . '/120'; ?>";
+    var api_url = "<?php echo $config['PROVINCE_ENDPOINT'] . '/' . $zoek['name'] . '/120'; ?>";
   </script>
   <!-- Pagination -->
   <nav class="nav-pag" aria-label="Page navigation">
