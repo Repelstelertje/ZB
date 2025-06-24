@@ -1,11 +1,23 @@
 <?php
-  include('includes/array_prov.php');
-  include('includes/header.php');
-  include('includes/utils.php');
-	if(isset($_GET['item'])) {
-		$provincie = strip_bad_chars( $_GET['item'] );
-		$zoek = $provincies[$provincie];
-	}
+  $base = __DIR__;
+  include $base . '/includes/array_prov.php';
+  include $base . '/includes/utils.php';
+
+  $zoek = null;
+  if (isset($_GET['item'])) {
+    $provincie = strip_bad_chars($_GET['item']);
+    if (isset($provincies[$provincie])) {
+      $zoek = $provincies[$provincie];
+    }
+  }
+
+  if (!$zoek) {
+    header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+    include $base . '/404.php';
+    exit;
+  }
+
+  include $base . '/includes/header.php';
 ?>
 <div class="container">
   <div class="jumbotron my-4">
@@ -59,4 +71,4 @@
     <a href="https://shemaledaten.net/shemales-<?php echo $zoek['img']; ?>" class="btn btn-primary btn-tips" target="_blank">Shemale sexdate <?php echo $zoek['name']; ?></a>
   </div>
 </div> <!-- container -->
-<?php include('includes/footer.php');?>
+<?php include $base . '/includes/footer.php'; ?>
