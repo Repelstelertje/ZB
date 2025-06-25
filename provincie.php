@@ -17,7 +17,6 @@
     exit;
   }
 
-  // Provide a province specific meta description for the header
   $metaDescription = $zoek['meta'];
 
   include $base . '/includes/header.php';
