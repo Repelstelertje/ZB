@@ -18,7 +18,7 @@ include $base . '/includes/header.php';
     </div>
     <div id="top-banner"></div>
     <div class="jumbotron jumbotron-sm text-center">
-        <h2>Niewste leden!</h2>
+        <h2>Nieuwste leden!</h2>
     </div>
     <div class="row" v-cloak>
         <div class="col-lg-3 col-md-6 mb-4 portfolio-item" id="Slankie" v-for="profile in filtered_profiles">
@@ -48,10 +48,10 @@ include $base . '/includes/header.php';
                     <a class="page-link" aria-label="Vorige" v-on:click="set_page_number(page-1)" ><span aria-hidden="true">&laquo;</span><span class="sr-only">Vorige</span></a>
                 </li>
                 <li v-for="page_number in max_page_number" class="page-item" v-bind:class="{ active: page_number == page }" >
-                    <a class="page-link" v-on:click="set_page_number(page_number)">{{ page_number }}</a>
-                </li>  
+                  <a class="page-link" v-on:click="set_page_number(page_number)">{{ page_number }}</a>
+                </li>
                 <li class="page-item">
-                    <a class="page-link" aria-label="Volgende" v-on:click="set_page_number(page+1)" ><span aria-hidden="true">&raquo;</span><span class="sr-only">Volgende</span></a>
+                  <a class="page-link" aria-label="Volgende" v-on:click="set_page_number(page+1)" ><span aria-hidden="true">&raquo;</span><span class="sr-only">Volgende</span></a>
                 </li>
             </ul>
         </nav>

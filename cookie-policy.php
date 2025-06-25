@@ -1,7 +1,7 @@
 <?php
 $base = __DIR__;
 define('TITLE', 'Cookiebeleid');
-$canonical = 'https://18date.net/cookie-policy';
+$canonical = 'https://zoekertjesbelgie.be/cookie-policy';
 $pageTitle = 'Cookiebeleid | ';
 include $base . '/includes/header.php';
 ?>

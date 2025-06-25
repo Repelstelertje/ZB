@@ -17,24 +17,19 @@ body {
   padding-bottom: 78px;
   min-height: 100vh;
 }
-
 main {
   margin: 40px 0;
 }
-
 a {
 	color: #DF013A;
 	text-decoration: none !important;
 }
-
 a:hover{
 	color: #F7819F;
 }
-
 hr {
 	margin: 0.5rem 0;
 }
-
 .card {
 	border: 1px solid #eee;
 }
@@ -71,7 +66,6 @@ hr {
 .logo {
 	max-height: 30px;
 }
-
 .bg-dark {
 	background-color: #DF013A !important;
 }
@@ -83,32 +77,33 @@ hr {
 .navbar-dark .navbar-nav .nav-link {
 	color: #fff;
 }
-
+.nav-link img {
+    max-width: 25px
+}
+.navbar-brand {
+    margin-right: 0;
+    font-weight: bold;
+}
 .navbar-dark .navbar-toggler {
 	color: rgba(255,255,255) !important;
     border-color: rgba(255,255,255) !important;
 }
-
 .dropdown-menu {
 	color: #fff;
 	background-color: #DF013A;
 	border: none;
 }
-
 .dropdown-item {
 	color: #fff;
 	padding: .25rem 0.5rem;
 }
-
 .dropdown-item:focus {
 	color: #fff;
 	background-color: #DF013A;
 }
-
 #provDropdown {
 	margin: 5px;
 }
-
 .jumbotron {
 	padding: 0.25rem;
 	background-color: rgba(255, 255, 255, 0.8);
@@ -135,88 +130,70 @@ hr {
     background-color: #DF013A;
     border: none;
 }
-
 .btn-primary:hover {
 	color: #fff;
     background-color: #F7819F;
 }
-
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
 	background-color: #F7819F;
 }
-
 .button-area {
 	display: inline-flex;
 }
-
 .online {
 	background-color: #000;
 }
-
 /* Nieuwe profielen */
 .new-profiles {
 	max-width: 200px;
 	margin: 5px auto;
 }
-
 /* Date ervaringen */
 .ervaringen {
 	display: inline-flex;
 	max-width: 30%;
 	padding: 10px;
 } 
-
 .stelletje {
 	line-height: 36px;
 	font-weight: 500;
 }
-
 /*	Provincie-pagina */
-
 .card-subtitle {
 	color: #DF013A;
 	margin-bottom: 10px;
 }
-
 .portfolio-item {
 	margin: 10px 0px;
 }
-
 /* Center all pagination elements */
 .pagination {
     justify-content: center;
 }
-
 /* Ensure the pagination nav stretches across the row */
 .nav-pag {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-
 .page-item.active .page-link {
 	background-color: #DF013A;
     border-color: #F7819F;
 }
-
 .page-item.active .page-link:hover {
 	background-color: #F7819F;
     border-color: #DF013A;
 	color: #FFF;
 }
-
 /* Profielpagina */
-
 #profiel {
 	min-height: 480px;
 }
-
 .profile-pic {
 	max-width: 300px;
 	border-radius: 5px;
 	width: 100%;
 }
-
 /* Datingtips */
 
 .right {
@@ -224,7 +201,6 @@ hr {
     float: right;
     margin: 10px 0px 10px 10px;
 }
-
 .left {
 	border-radius: 2px;
     float: left;
@@ -245,7 +221,7 @@ footer {
     display: inline-block;
 }
 .footer-links a {
-    color: #fff;
+	color: #ffffff;
 }
 .sub-text {
     color: #eee;
@@ -261,11 +237,9 @@ footer {
     color: #ffffff;
 }
 /* Social */
-
 .addthis_inline_follow_toolbox {
     margin-top: -5px;
 }
-
 /* Alert shown when profile data fails to load */
 .alert.data-error {
     text-align: center;
