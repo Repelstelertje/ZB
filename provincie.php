@@ -17,6 +17,8 @@
     exit;
   }
 
+  $metaDescription = $zoek['meta'];
+
   include $base . '/includes/header.php';
 ?>
 <div class="container">
