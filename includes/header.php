@@ -182,6 +182,10 @@
             break;
         }
     }
+    // Override Open Graph description when a specific meta description is provided
+    if (isset($metaDescription) && !empty($metaDescription)) {
+        $og_description = htmlspecialchars($metaDescription, ENT_QUOTES, 'UTF-8');
+    }
 ?>
 <!-- Voeg dynamische Open Graph-tags toe in de HTML -->
 <meta property="og:title" content="<?php echo $og_title; ?>">
