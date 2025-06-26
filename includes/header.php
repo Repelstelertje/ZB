@@ -58,12 +58,13 @@
 <?php
     // Canonical URL logic
     $baseUrl = "https://zoekertjesbelgie.be";
-    $canonicalUrl = $baseUrl; // Default canonical URL
-    $title = "Zoekertjes België"; // Default title
-    if (isset($_GET['item'])) {
+    $canonicalUrl = isset($canonical) ? $canonical : $baseUrl; // Allow pages to override
+    $title = isset($pageTitle) ? $pageTitle : "Zoekertjes België"; // Default title
+
+    if (!isset($canonical) && isset($_GET['item'])) {
         $canonicalUrl = $baseUrl . "/dating-" . htmlspecialchars($_GET['item']);
         $title = "Dating " . htmlspecialchars($_GET['item']);
-    } else if (isset($_GET['id'])) {
+    } else if (!isset($canonical) && isset($_GET['id'])) {
         $id = preg_replace('/[^0-9]/', '', $_GET['id']);
         $apiResponse = @file_get_contents("https://20fhbe2020.be/profile/get0/8/" . $id);
         if ($apiResponse !== false) {
@@ -84,15 +85,21 @@
             $canonicalUrl = $baseUrl . "/profile?id=" . htmlspecialchars($_GET['id']);
             $title = "Daten met " . htmlspecialchars($_GET['id']);
         }
-    } else if (isset($_GET['tip'])) {
+    } else if (!isset($canonical) && isset($_GET['slug'])) {
+        $slug = strtolower($_GET['slug']);
+        $slug = preg_replace('/[^a-z0-9-]/', '', $slug);
+        $slug = trim($slug, '-');
+        $canonicalUrl = $baseUrl . '/daten-met-' . $slug;
+        $title = 'Daten met ' . str_replace('-', ' ', ucfirst($slug));
+    } else if (!isset($canonical) && isset($_GET['tip'])) {
         $canonicalUrl = $baseUrl . "/datingtips-" . htmlspecialchars($_GET['tip']);
         $title = "Datingtips " . htmlspecialchars($_GET['tip']);
     }
-    // When no query parameters are present, build canonical from script name
-    if (empty($_GET)) {
+    // When no query parameters are present and no override, build canonical from script name
+    if (!isset($canonical) && empty($_GET)) {
         $script = basename($_SERVER['SCRIPT_NAME']);
         if ($script !== 'index.php') {
-            $canonicalUrl = $baseUrl . '/' . $script;
+            $canonicalUrl = $baseUrl . '/' . str_replace('.php', '', $script);
         }
     }
     // Always append site name to the title when not already present

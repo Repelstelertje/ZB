@@ -7,6 +7,11 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.+)$ $1.php [QSA]
 
+# Redirect outdated dating URLs to the correct datingtips pages
+RewriteRule ^dating-gegarandeerd-een-date/?$ https://zoekertjesbelgie.be/datingtips-gegarandeerd-een-date [R=301,L]
+RewriteRule ^dating-stout-contact/?$ https://zoekertjesbelgie.be/datingtips-stout-contact [R=301,L]
+RewriteRule ^dating-gratis-dating/?$ https://zoekertjesbelgie.be/datingtips-gratis-dating [R=301,L]
+
 RewriteRule ^dating-([a-z-]+)/?$ provincie.php?item=$1 [NC,L]
 RewriteRule ^datingtips-([a-z-]+)/?$ datingtips.php?item=$1 [NC,L]
 RewriteRule ^daten-met-[0-9a-zA-Z-]+$ profile.php [NC,L,QSA]
